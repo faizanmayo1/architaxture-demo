@@ -61,14 +61,7 @@ export function Reports() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="Service Reports + Business Intelligence · Phase 7 module"
-          title={
-            <>
-              <span className="block">The numbers</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                behind the firm.
-              </span>
-            </>
-          }
+          title="The numbers behind the firm."
           subtitle="Revenue attribution by Tax Manager, Sales Rep, and POD. Throughput by staff. Client tiers, adoption rate, health scoring. Updated every 4 hours."
           action={
             <div className="flex items-center gap-2.5">

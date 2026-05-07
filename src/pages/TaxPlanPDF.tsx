@@ -12,7 +12,7 @@ export function TaxPlanPDF({ clientId }: { clientId: number }) {
   return (
     <div className="animate-fade-up bg-paper-deep min-h-screen pb-16">
       {/* Toolbar */}
-      <div className="sticky top-0 z-30 bg-paper border-b border-ink/8 px-10 py-3 flex items-center justify-between">
+      <div className="sticky top-[60px] z-20 bg-paper border-b border-ink/8 px-10 py-3 flex items-center justify-between">
         <Link to={`/clients/${client.id}/tax-planning`} className="flex items-center gap-1.5 text-[12.5px] text-ink-muted hover:text-ink transition-colors">
           <ArrowLeft size={12} strokeWidth={1.8} />
           Back to Tax Planning

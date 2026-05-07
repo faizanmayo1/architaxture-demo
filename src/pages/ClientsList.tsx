@@ -48,11 +48,7 @@ export function ClientsList() {
       <div className="px-10 pt-10 max-w-[1280px]">
         <PageHeader
           eyebrow={`${FIRM.totalClients} active clients · 2 PODs · 17 staff`}
-          title={
-            <>
-              <span className="block">The book.</span>
-            </>
-          }
+          title="The book."
           subtitle={`Diamond and Platinum tiers represent ${Math.round((4 / 7) * 100)}% of revenue at ${ALL_CLIENTS.length} of ${FIRM.totalClients} clients shown — full firm view requires Phase 0 stabilization.`}
         />
       </div>

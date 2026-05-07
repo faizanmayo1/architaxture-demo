@@ -51,14 +51,7 @@ export function Engagements() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="Engagements · Work items by category"
-          title={
-            <>
-              <span className="block">All work,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                in one column.
-              </span>
-            </>
-          }
+          title="All work, in one column."
           subtitle={`${WORK_ITEM_CATEGORIES.length} categories. Dual client and entity routing. Renewal warnings on engagements expiring within 60 days. Engagement letter status, work item ownership, deadlines.`}
           action={
             <button className="flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">

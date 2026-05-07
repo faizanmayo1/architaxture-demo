@@ -39,11 +39,7 @@ export function ReviewQueue() {
       <div className="px-10 pt-8 pb-5 border-b border-ink/8">
         <PageHeader
           eyebrow="Review Queue · Tucker · 1040 (2024)"
-          title={
-            <span>
-              The extraction <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>credibility</span> moment
-            </span>
-          }
+          title="The extraction credibility moment"
           subtitle="Hybrid text + vision pipeline. PDF on the left, structured data on the right. Inline editing with PATCH-allowlist guard. Null-preserving COALESCE upsert protects prior corrections."
           action={
             <div className="flex items-center gap-2.5">

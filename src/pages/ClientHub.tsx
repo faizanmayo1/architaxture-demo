@@ -40,81 +40,10 @@ export function ClientHub({ clientId = 60 }: ClientHubProps) {
 
   const activeForecast = TUCKER_FORECAST_VERSIONS.find((v) => !v.isLocked) || TUCKER_FORECAST_VERSIONS[0];
 
-  const tabs = [
-    { label: "Overview", path: `/clients/${client.id}`, active: location === `/clients/${client.id}` },
-    { label: "Tax Dashboard", path: `/clients/${client.id}/tax-dashboard` },
-    { label: "Forecasts", path: `/clients/${client.id}/forecast` },
-    { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
-    { label: "Documents", path: `/clients/${client.id}/documents` },
-    { label: "Engagements", path: `/clients/${client.id}/engagements` },
-    { label: "Communications", path: `/clients/${client.id}/communications` },
-  ];
 
   return (
     <div className="animate-fade-up">
-      {/* Header */}
-      <div className="px-10 pt-10 pb-0 max-w-[1280px]">
-        <PageHeader
-          breadcrumb={[
-            { label: "Clients", to: "/clients" },
-            { label: `${client.firstName} ${client.lastName}` },
-          ]}
-          eyebrow={`Client #${String(client.id).padStart(4, "0")} · POD ${client.pod} · ${client.tier} Tier`}
-          title={
-            <>
-              <span className="block">{client.firstName} L.</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                {client.lastName}
-              </span>
-            </>
-          }
-          subtitle={
-            <span className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-ink-muted">
-              <span className="flex items-center gap-1.5">
-                <span className="text-ink">{client.filingStatus}</span>
-                {client.spouse && <span className="text-ink-muted">· w/ {client.spouse.firstName} {client.spouse.lastName}</span>}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <MapPin size={12} strokeWidth={1.6} />
-                {client.city}, {client.state}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Mail size={12} strokeWidth={1.6} />
-                {client.email}
-              </span>
-            </span>
-          }
-          action={
-            <div className="flex items-center gap-2.5">
-              <Pill variant="emerald" dot>{client.status}</Pill>
-              <Pill variant="ochre" dot>Health {client.healthScore}/100</Pill>
-            </div>
-          }
-        />
-      </div>
-
-      {/* Tabs */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
-        <div className="flex items-end gap-1 max-w-[1280px]">
-          {tabs.map((tab) => (
-            <Link
-              key={tab.path}
-              to={tab.path}
-              className={`px-4 py-3 text-[13px] tracking-tight transition-colors relative ${
-                tab.active ? "text-ink" : "text-ink-muted hover:text-ink"
-              }`}
-            >
-              {tab.label}
-              {tab.active && (
-                <span className="absolute left-0 right-0 bottom-0 h-px bg-ochre-500" />
-              )}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Overview body */}
-      <div className="px-10 py-10 max-w-[1280px]">
+      <div className="px-8 py-8 max-w-[1400px]">
         {/* Anchor stats */}
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">

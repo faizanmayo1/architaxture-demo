@@ -93,11 +93,8 @@ export function ClientPortal() {
             <ShieldCheck size={11} strokeWidth={1.8} className="text-emerald-deep" />
             <span>Signed in via magic link · {fmtDate(today, "long")}</span>
           </div>
-          <h1 className="display text-[56px] leading-[0.96] text-ink text-balance mb-3" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
-            <span className="block">Welcome back,</span>
-            <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-              Jeffrey.
-            </span>
+          <h1 className="display text-[34px] text-ink leading-[1.15] tracking-crisp mb-3 whitespace-nowrap">
+            Welcome back, Jeffrey.
           </h1>
           <p className="text-[15px] text-ink-muted max-w-xl leading-relaxed">
             Your 2024 return is currently in review. Marcus and his team have everything they need

@@ -59,14 +59,7 @@ export function IRSNotices() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="IRS e-Services Feed · Phase 3 · Proposed"
-          title={
-            <>
-              <span className="block">Every notice,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                matched and drafted.
-              </span>
-            </>
-          }
+          title="Every notice, matched and drafted."
           subtitle="Real-time pull from IRS e-Services. Notices auto-matched to client by EIN/SSN. AI drafts first response with cited Treasury Reg and case law. Staff reviews and sends — full audit trail."
           action={
             <button className="flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">
