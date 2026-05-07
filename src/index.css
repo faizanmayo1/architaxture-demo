@@ -3,28 +3,29 @@
 @tailwind utilities;
 
 /* ────────────────────────────────────────────────────────────
-   Editorial-financial design system
-   Cream paper + ink + ochre. Fraunces / Plex Sans / Plex Mono.
+   Aragon-branded design system
+   White surfaces · charcoal ink · sky-blue accent · Roboto
    ──────────────────────────────────────────────────────────── */
 
 @layer base {
   :root {
-    --paper: 250 247 240;
-    --paper-deep: 244 239 227;
-    --paper-card: 255 254 251;
-    --ink: 14 14 18;
-    --ochre: 184 101 30;
+    --paper: 255 255 255;
+    --paper-deep: 245 246 248;
+    --paper-card: 255 255 255;
+    --ink: 45 46 51;
+    --aragon-blue: 157 214 242;
+    --aragon-mid: 136 138 145;
   }
 
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "ss01", "ss02", "kern";
+    font-feature-settings: "kern", "calt";
   }
 
   body {
-    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-family: "Roboto", system-ui, sans-serif;
     background-color: rgb(var(--paper));
     color: rgb(var(--ink));
     font-size: 14px;
@@ -32,18 +33,16 @@
     letter-spacing: -0.005em;
   }
 
-  /* tabular figures by default in numeric contexts — financial product */
   .tabular {
     font-variant-numeric: tabular-nums;
-    font-feature-settings: "tnum", "ss01";
+    font-feature-settings: "tnum";
   }
 
   ::selection {
-    background-color: rgb(var(--ochre) / 0.18);
+    background-color: rgb(var(--aragon-blue) / 0.4);
     color: rgb(var(--ink));
   }
 
-  /* Custom scrollbar — restrained */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -52,89 +51,116 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgb(14 14 18 / 0.12);
+    background: rgb(45 46 51 / 0.10);
     border-radius: 0;
     border: 3px solid rgb(var(--paper));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(14 14 18 / 0.24);
+    background: rgb(45 46 51 / 0.20);
   }
 }
 
 @layer components {
-  /* Display headings — Fraunces with optical sizing */
+  /* Display headings — Roboto with weight + tight tracking */
   .display {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
-    font-weight: 400;
-    letter-spacing: -0.025em;
-    line-height: 0.96;
+    font-family: "Roboto", -apple-system, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.0;
+    color: rgb(var(--ink));
   }
 
   .display-soft {
-    font-family: "Fraunces", Georgia, serif;
-    font-variation-settings: "opsz" 144, "SOFT" 100;
-    font-weight: 380;
-    letter-spacing: -0.022em;
+    font-family: "Roboto", -apple-system, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: -0.025em;
   }
 
-  /* Eyebrow — small caps style label */
   .eyebrow {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgb(14 14 18 / 0.55);
+    color: rgb(45 46 51 / 0.50);
   }
 
-  /* Hairline rule */
   .hairline {
     border: none;
-    border-top: 1px solid rgb(14 14 18 / 0.08);
+    border-top: 1px solid rgb(45 46 51 / 0.08);
     margin: 0;
   }
 
-  /* Card — subtle elevation, hairline border */
+  /* Card — large premium shadow on white surfaces */
   .card {
     background-color: rgb(var(--paper-card));
-    border: 1px solid rgb(14 14 18 / 0.06);
-    border-radius: 4px;
-    box-shadow: 0 1px 0 rgb(14 14 18 / 0.03);
+    border-radius: 8px;
+    box-shadow:
+      0 1px 3px rgba(45, 46, 51, 0.05),
+      0 8px 20px -4px rgba(45, 46, 51, 0.08),
+      0 0 0 1px rgba(45, 46, 51, 0.04);
+    transition: box-shadow 200ms ease;
   }
 
-  /* Tabular cells */
+  .card:hover {
+    box-shadow:
+      0 2px 6px rgba(45, 46, 51, 0.06),
+      0 16px 32px -6px rgba(45, 46, 51, 0.12),
+      0 0 0 1px rgba(45, 46, 51, 0.06);
+  }
+
   .num {
     font-variant-numeric: tabular-nums;
     font-feature-settings: "tnum";
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Roboto Mono", monospace;
     letter-spacing: -0.01em;
+    color: rgb(var(--ink));
   }
 
   /* Sidebar nav item */
   .nav-item {
-    @apply flex items-center gap-3 px-4 py-2 text-[13px] text-ink-soft hover:bg-paper-deep transition-colors duration-150 cursor-pointer;
+    @apply flex items-center gap-3 px-4 py-2 text-[13px] text-ink-soft transition-all duration-150 cursor-pointer relative;
+  }
+  .nav-item:hover {
+    background-color: rgb(var(--aragon-blue) / 0.10);
+    color: rgb(var(--ink));
   }
   .nav-item.active {
-    @apply text-ink bg-paper-deep;
+    color: rgb(var(--ink));
+    background-color: rgb(var(--aragon-blue) / 0.18);
+    font-weight: 500;
   }
   .nav-item.active::before {
     content: "";
-    width: 2px;
-    height: 14px;
-    background-color: rgb(var(--ochre));
-    margin-left: -16px;
-    margin-right: 14px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 3px;
+    background-color: rgb(var(--aragon-blue));
+    border-radius: 0 2px 2px 0;
   }
 
-  /* Pill */
   .pill {
     @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-[11px] font-medium rounded-full border;
   }
 
-  /* Page title block */
   .page-title {
-    @apply mb-8 pb-6 border-b border-ink/10;
+    @apply mb-8 pb-6;
+    border-bottom: 1px solid rgb(45 46 51 / 0.08);
+  }
+
+  /* Premium button — primary action */
+  .btn-primary {
+    @apply flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium rounded-lg transition-all;
+    background-color: rgb(var(--ink));
+    color: rgb(var(--paper));
+    box-shadow: 0 2px 6px rgba(45, 46, 51, 0.18);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(45, 46, 51, 0.22);
   }
 }
 
@@ -143,14 +169,42 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity: 0.5;
     pointer-events: none;
     mix-blend-mode: multiply;
     z-index: 0;
   }
 
-  .text-balance {
-    text-wrap: balance;
+  .text-balance { text-wrap: balance; }
+
+  .text-aragon { color: rgb(var(--aragon-blue)); }
+
+  /* Paper document scope — for the form previews & letters that
+     are intentionally white-on-white inside white pages, give them
+     a subtle warm cream tint so they read as "physical document" */
+  .paper-doc {
+    background-color: #FBF9F2;
+    color: #2D2E33;
+    border: 1px solid rgba(45, 46, 51, 0.10);
   }
+  .paper-doc .text-ink { color: #2D2E33 !important; }
+  .paper-doc .text-ink-soft { color: #4A4C53 !important; }
+  .paper-doc .text-ink-muted { color: #7A7C82 !important; }
+  .paper-doc .text-ink-faint { color: #A8AAB0 !important; }
+  .paper-doc .border-ink\/15 { border-color: rgba(45, 46, 51, 0.15) !important; }
+  .paper-doc .border-ink\/10 { border-color: rgba(45, 46, 51, 0.10) !important; }
+  .paper-doc .border-ink\/8 { border-color: rgba(45, 46, 51, 0.08) !important; }
+  .paper-doc .border-ink\/6 { border-color: rgba(45, 46, 51, 0.06) !important; }
+  .paper-doc .border-ink { border-color: #2D2E33 !important; }
+  .paper-doc .bg-paper-deep { background-color: rgba(0, 0, 0, 0.04) !important; }
+  .paper-doc .bg-paper-card { background-color: #FFFFFF !important; }
+  .paper-doc .bg-ochre-50\/40 { background-color: rgba(157, 214, 242, 0.20) !important; }
+  .paper-doc .bg-ochre-50\/60 { background-color: rgba(157, 214, 242, 0.28) !important; }
+  .paper-doc .text-ochre-700 { color: #3F7FA0 !important; }
+  .paper-doc .text-ochre-800 { color: #2D5C77 !important; }
+  .paper-doc .border-ochre-500 { border-color: #5DA3C5 !important; }
+  .paper-doc .text-ochre-500 { color: #5DA3C5 !important; }
+  .paper-doc .num { color: #2D2E33 !important; }
+  .paper-doc .eyebrow { color: rgba(45, 46, 51, 0.55) !important; }
 }

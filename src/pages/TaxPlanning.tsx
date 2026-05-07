@@ -79,10 +79,19 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
           }
           subtitle="AI-generated recommendations with first-pass savings estimates. Staff override on each. Adopted strategies feed the Forecasting model in real time."
           action={
-            <button className="flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">
-              <Sparkles size={13} strokeWidth={1.8} />
-              Regenerate Tax Plan
-            </button>
+            <div className="flex items-center gap-2.5">
+              <Link
+                to={`/clients/${client.id}/tax-plan-pdf`}
+                className="flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-medium border border-ink/15 hover:bg-paper-deep transition-colors text-ink rounded-sm"
+              >
+                <FileText size={12} strokeWidth={1.8} />
+                Tax Plan PDF
+              </Link>
+              <button className="flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">
+                <Sparkles size={13} strokeWidth={1.8} />
+                Regenerate Tax Plan
+              </button>
+            </div>
           }
         />
       </div>

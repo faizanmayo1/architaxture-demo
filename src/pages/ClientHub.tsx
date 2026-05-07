@@ -42,6 +42,7 @@ export function ClientHub({ clientId = 60 }: ClientHubProps) {
 
   const tabs = [
     { label: "Overview", path: `/clients/${client.id}`, active: location === `/clients/${client.id}` },
+    { label: "Tax Dashboard", path: `/clients/${client.id}/tax-dashboard` },
     { label: "Forecasts", path: `/clients/${client.id}/forecast` },
     { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
     { label: "Documents", path: `/clients/${client.id}/documents` },

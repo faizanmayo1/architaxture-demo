@@ -293,6 +293,80 @@ export function Reports() {
             })}
           </div>
         </Card>
+
+        {/* Revenue client spreadsheet · Jan–Dec (per brief 2.7) */}
+        <Card padded={false} className="overflow-hidden mt-8">
+          <div className="px-7 pt-6 pb-4 flex items-end justify-between border-b border-ink/8">
+            <div>
+              <div className="eyebrow mb-1">Client revenue spreadsheet · 2026 · Jan–Dec</div>
+              <h3 className="display text-[22px] text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                Per-client monthly invoicing
+              </h3>
+            </div>
+            <div className="flex items-center gap-2">
+              <button className="text-[11px] text-ink-muted hover:text-ink flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm hover:bg-paper-deep transition-colors">
+                Hide zero-revenue
+              </button>
+              <button className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium border border-ink/15 hover:bg-paper-deep transition-colors text-ink rounded-sm">
+                <Download size={11} strokeWidth={1.8} />
+                Export CSV
+              </button>
+            </div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-[11.5px] min-w-[1200px]">
+              <thead>
+                <tr className="border-b border-ink/8 bg-paper-deep/40">
+                  <th className="text-left py-2.5 px-4 eyebrow text-[10px] sticky left-0 bg-paper-deep/40">Client</th>
+                  {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m) => (
+                    <th key={m} className="text-right py-2.5 px-2 eyebrow text-[10px]">{m}</th>
+                  ))}
+                  <th className="text-right py-2.5 px-4 eyebrow text-[10px] bg-paper-deep/60">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { name: "Jeffrey Tucker", id: 60, m: [0,0,12400,18400,7600,0,0,0,0,0,0,0] },
+                  { name: "Manuel Cordova", id: 96, m: [0,4200,8400,12200,4200,0,0,3600,0,0,0,0] },
+                  { name: "Anika Westvale", id: 73, m: [0,4400,14200,11800,7600,0,0,0,4400,0,0,0] },
+                  { name: "Bryan Holcomb", id: 184, m: [0,2800,6200,8400,1800,0,0,0,0,0,0,0] },
+                  { name: "Karen Lakeshore", id: 142, m: [0,2400,6800,8200,1400,0,0,0,0,0,0,0] },
+                  { name: "Lila Trent", id: 7, m: [0,3200,8400,10800,2200,0,0,0,0,0,0,0] },
+                  { name: "Damon Pell", id: 211, m: [0,0,0,0,0,1200,1200,0,0,0,0,0] },
+                  { name: "(228 other clients · roll-up)", id: 0, m: [84200,151400,256400,336400,189800,0,0,0,0,0,0,0] },
+                ].map((row, i) => {
+                  const total = row.m.reduce((s, v) => s + v, 0);
+                  return (
+                    <tr key={i} className={cn("border-b border-ink/6 hover:bg-paper-deep/30 transition-colors", row.id === 60 && "bg-ochre-50/30")}>
+                      <td className={cn("py-2 px-4 sticky left-0 text-[12.5px] truncate", row.id === 60 ? "bg-ochre-50/30 text-ink font-medium" : row.id === 0 ? "text-ink-muted italic" : "text-ink")}>
+                        {row.name}
+                      </td>
+                      {row.m.map((v, j) => (
+                        <td key={j} className={cn("text-right py-2 px-2 num tabular", v === 0 ? "text-ink-faint" : "text-ink-soft")}>
+                          {v === 0 ? "—" : fmtUSD(v, { compact: true })}
+                        </td>
+                      ))}
+                      <td className="text-right py-2 px-4 num text-[13px] text-ink font-medium bg-paper-deep/30">{fmtUSD(total, { compact: true })}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr className="bg-ink/3 border-t-2 border-ink">
+                  <td className="text-left py-3 px-4 sticky left-0 bg-paper text-[11px] eyebrow">Firm total</td>
+                  {[84200, 168400, 312800, 406200, 214800, 1200, 1200, 3600, 4400, 0, 0, 0].map((v, j) => (
+                    <td key={j} className="text-right py-3 px-2 num text-[12px] text-ink">{v === 0 ? "—" : fmtUSD(v, { compact: true })}</td>
+                  ))}
+                  <td className="text-right py-3 px-4 num text-[13px] text-ink font-bold bg-paper-deep">{fmtUSD(1186400, { compact: true })}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div className="px-7 py-3 border-t border-ink/8 text-[11px] text-ink-muted flex items-center justify-between">
+            <span>Sourced directly from <code className="bg-paper-deep px-1 rounded">ignition_invoices</code> per architecture decision 4.1</span>
+            <span>Showing 7 of 235 clients</span>
+          </div>
+        </Card>
       </div>
     </div>
   );

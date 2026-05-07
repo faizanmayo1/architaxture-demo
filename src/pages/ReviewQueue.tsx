@@ -22,6 +22,9 @@ const EXTRACTION_TABS = [
   { id: "k1s", label: "K-1s", count: 3 },
   { id: "7203", label: "Form 7203", count: 8 },
   { id: "scheduled", label: "Schedule D", count: 12 },
+  { id: "1120", label: "1120 (C-Corp)", count: 34 },
+  { id: "schedule-g", label: "Schedule G", count: 5 },
+  { id: "disregarded", label: "Disregarded LLCs", count: 2 },
   { id: "warnings", label: "Confidence Flags", count: 0 },
 ];
 
@@ -192,6 +195,9 @@ export function ReviewQueue() {
             {activeTab === "k1s" && <TabK1s />}
             {activeTab === "7203" && <Tab7203 />}
             {activeTab === "scheduled" && <TabScheduleD />}
+            {activeTab === "1120" && <Tab1120 />}
+            {activeTab === "schedule-g" && <TabScheduleG />}
+            {activeTab === "disregarded" && <TabDisregarded />}
             {activeTab === "warnings" && <TabWarnings />}
           </div>
         </div>
@@ -387,6 +393,132 @@ function Tab7203() {
 
 function TabScheduleD() {
   return <div className="text-[13px] text-ink-muted italic">Schedule D + Form 8949 — 12 fields verified.</div>;
+}
+
+function Tab1120() {
+  return (
+    <>
+      <div className="mb-4 px-4 py-3 bg-paper-deep border border-ink/8 rounded-sm flex items-start gap-3">
+        <Sparkles size={14} strokeWidth={1.8} className="text-ochre-500 mt-0.5 shrink-0" />
+        <div className="text-[12.5px] text-ink-soft leading-relaxed">
+          <span className="text-ink font-medium">Penngrove Capital LLC · 2024 Form 1120 · C-Corp.</span>{" "}
+          34 schema columns extracted. Step 6A confidence-notes pass + Step 6B vision fallback handled
+          balance sheet key-naming variations (_eoy / _boy / _ending / _beginning). Null-preserving COALESCE upsert applied.
+        </div>
+      </div>
+
+      <ExtractedSection
+        title="Business Activity (Schedule K)"
+        rows={[
+          { label: "Business activity", value: "Investment management", confidence: 1.0 },
+          { label: "Product or service", value: "Capital advisory & PE fund LP investments", confidence: 0.96 },
+          { label: "Business activity code", value: "523900", confidence: 0.99 },
+        ]}
+      />
+
+      <ExtractedSection
+        title="Income (Form 1120, Lines 1–11)"
+        rows={[
+          { label: "Gross receipts", value: fmtUSD(2840000), confidence: 1.0 },
+          { label: "Cost of goods sold", value: fmtUSD(0), confidence: 1.0 },
+          { label: "Gross profit", value: fmtUSD(2840000), confidence: 1.0 },
+          { label: "Dividends", value: fmtUSD(184000), confidence: 0.98 },
+          { label: "Interest", value: fmtUSD(42600), confidence: 1.0 },
+          { label: "Capital gain net income", value: fmtUSD(218400), confidence: 0.97 },
+          { label: "Other income", value: fmtUSD(64200), confidence: 0.94 },
+          { label: "Total income (Line 11)", value: fmtUSD(3349200), confidence: 1.0 },
+        ]}
+      />
+
+      <ExtractedSection
+        title="Balance Sheet · EOY (Schedule L)"
+        rows={[
+          { label: "Cash", value: fmtUSD(642800), confidence: 1.0 },
+          { label: "Accounts receivable", value: fmtUSD(184200), confidence: 0.99 },
+          { label: "Investments — securities", value: fmtUSD(4280000), confidence: 1.0 },
+          { label: "Buildings & equipment (net)", value: fmtUSD(412600), confidence: 0.97 },
+          { label: "Total assets", value: fmtUSD(5519600), confidence: 1.0 },
+          { label: "Common stock", value: fmtUSD(100000), confidence: 1.0 },
+          { label: "Retained earnings (unappropriated)", value: fmtUSD(4218400), confidence: 1.0 },
+          { label: "Total liabilities + equity", value: fmtUSD(5519600), confidence: 1.0 },
+        ]}
+      />
+    </>
+  );
+}
+
+function TabScheduleG() {
+  return (
+    <>
+      <div className="mb-4 px-4 py-3 bg-ochre-50/60 border border-ochre-200/60 rounded-sm flex items-start gap-3">
+        <Sparkles size={14} strokeWidth={1.8} className="text-ochre-700 mt-0.5 shrink-0" />
+        <div className="text-[12.5px] text-ink-soft leading-relaxed">
+          <span className="text-ink font-medium">Schedule G — Persons Owning the Corporation's Voting Stock</span> ·
+          extracted via the corrected IRS heading (per Phase 0 fix). Penngrove Capital LLC has 2 entities owning ≥ 25% voting stock.
+        </div>
+      </div>
+      <div className="card p-0 mb-6">
+        <div className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.7fr_60px] text-[10.5px] eyebrow border-b border-ink/8 px-4 py-3 bg-paper-deep/40">
+          <div>Person / Entity</div>
+          <div>EIN / SSN</div>
+          <div>Country</div>
+          <div className="text-right">% Voting</div>
+          <div></div>
+        </div>
+        {[
+          { name: "Voss Family Holdings LLC", id: "84-2104***", country: "USA", pct: "62%", confidence: 1.0 },
+          { name: "Iris Voss (individual)", id: "XXX-XX-9842", country: "USA", pct: "26%", confidence: 1.0 },
+          { name: "Marlin Capital Trust", id: "85-7104***", country: "USA", pct: "12%", confidence: 0.98 },
+        ].map((r, i) => (
+          <div key={i} className="grid grid-cols-[1.6fr_0.7fr_0.7fr_0.7fr_60px] px-4 py-2.5 border-b border-ink/6 last:border-0 group hover:bg-paper-deep/30 items-center">
+            <div className="text-[12.5px] text-ink">{r.name}</div>
+            <div className="text-[11.5px] text-ink-muted num">{r.id}</div>
+            <div className="text-[11.5px] text-ink-muted">{r.country}</div>
+            <div className="text-right num text-[13px] text-ink">{r.pct}</div>
+            <div className="text-right text-[10px] tabular text-emerald-deep flex items-center justify-end gap-1">
+              <Sparkles size={9} strokeWidth={1.8} />
+              {(r.confidence * 100).toFixed(0)}%
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="text-[12px] text-ink-muted italic">
+        IRS-mandated disclosure when any person/entity owns 20% or more (direct or constructive) of a C-Corp's voting stock.
+      </div>
+    </>
+  );
+}
+
+function TabDisregarded() {
+  return (
+    <>
+      <div className="mb-4 px-4 py-3 bg-paper-deep border border-ink/8 rounded-sm flex items-start gap-3">
+        <Sparkles size={14} strokeWidth={1.8} className="text-ochre-500 mt-0.5 shrink-0" />
+        <div className="text-[12.5px] text-ink-soft leading-relaxed">
+          <span className="text-ink font-medium">Disregarded entities — Schedule K, Question 4.</span>{" "}
+          Wholly-owned single-member LLCs whose activity flows up to the parent C-Corp. Stored in
+          the <code className="font-mono bg-paper-card px-1 rounded">document_1120_disregarded_entities</code> table.
+        </div>
+      </div>
+      <div className="space-y-2">
+        {[
+          { name: "Penngrove Real Estate Holdings LLC", state: "DE", purpose: "Real estate investment vehicle", ein: "—" },
+          { name: "Penngrove Insurance Holdings LLC", state: "FL", purpose: "Insurance & risk management subsidiary", ein: "84-9482***" },
+        ].map((d, i) => (
+          <div key={i} className="card p-4 flex items-start gap-4">
+            <div className="w-9 h-9 rounded-sm bg-paper-deep flex items-center justify-center shrink-0">
+              <FileText size={14} strokeWidth={1.5} className="text-ink-muted" />
+            </div>
+            <div className="flex-1">
+              <div className="text-[13.5px] font-medium text-ink">{d.name}</div>
+              <div className="text-[11.5px] text-ink-muted mt-0.5 tabular">EIN {d.ein} · {d.state} · {d.purpose}</div>
+            </div>
+            <Pill variant="emerald" dot>Disregarded</Pill>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 function TabWarnings() {

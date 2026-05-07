@@ -20,7 +20,10 @@ import { IRSNotices } from "./pages/IRSNotices";
 import { IRSNoticeDetail } from "./pages/IRSNoticeDetail";
 import { ClientPortal } from "./pages/ClientPortal";
 import { Onboarding } from "./pages/Onboarding";
+import { OnboardingQueue } from "./pages/OnboardingQueue";
 import { FormGeneration } from "./pages/FormGeneration";
+import { TaxDashboard } from "./pages/TaxDashboard";
+import { TaxPlanPDF } from "./pages/TaxPlanPDF";
 import { Placeholder } from "./pages/Placeholder";
 
 export default function App() {
@@ -39,6 +42,15 @@ export default function App() {
             <Route path="/clients" component={ClientsList} />
             <Route path="/clients/:id">
               {(params) => <ClientHub clientId={Number(params.id)} />}
+            </Route>
+            <Route path="/clients/:id/tax-dashboard">
+              {(params) => <TaxDashboard clientId={Number(params.id)} />}
+            </Route>
+            <Route path="/clients/:id/tax-plan-pdf">
+              {(params) => <TaxPlanPDF clientId={Number(params.id)} />}
+            </Route>
+            <Route path="/clients/:id/forecast/:rest*">
+              {(params) => <Forecasting clientId={Number(params.id)} tab={(params as any).rest} />}
             </Route>
             <Route path="/clients/:id/forecast">
               {(params) => <Forecasting clientId={Number(params.id)} />}
@@ -69,6 +81,7 @@ export default function App() {
             <Route path="/reports" component={Reports} />
             <Route path="/settings" component={Settings} />
             <Route path="/onboarding" component={Onboarding} />
+            <Route path="/operations/onboarding" component={OnboardingQueue} />
             <Route path="/forms" component={FormGeneration} />
             <Route>
               <Placeholder title="Not found" subtitle="The page you were looking for doesn't exist yet." />
