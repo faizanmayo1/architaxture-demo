@@ -42,7 +42,7 @@ export function CardHeader({
     <div className={cn("flex items-start justify-between gap-4 mb-5", className)}>
       <div className="min-w-0">
         {eyebrow && <div className="eyebrow mb-2">{eyebrow}</div>}
-        <h3 className="display text-[20px] text-ink leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+        <h3 className="display text-[20px] text-ink leading-tight">
           {title}
         </h3>
         {description && (

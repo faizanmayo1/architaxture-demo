@@ -7,7 +7,7 @@ export function Placeholder({ title, subtitle }: { title: string; subtitle?: str
       <PageHeader eyebrow="Coming next" title={title} subtitle={subtitle} />
       <Card className="bg-paper-deep border-dashed">
         <div className="py-16 text-center">
-          <div className="display text-[28px] text-ink-muted" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+          <div className="display text-[28px] text-ink-muted">
             On the roadmap
           </div>
           <div className="text-[13px] text-ink-faint mt-2 max-w-md mx-auto">

@@ -63,7 +63,7 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">Tucker's</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 paper trail.
               </span>
             </>
@@ -102,7 +102,7 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
         <div className="mb-8 grid grid-cols-3 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden">
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Received</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {received}<span className="text-[18px] text-ink-muted">/{total}</span>
             </div>
             <div className="mt-3 h-1.5 bg-paper-deep rounded-full overflow-hidden">
@@ -111,14 +111,14 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Outstanding</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               1
             </div>
             <div className="text-[11.5px] text-ink-muted tabular mt-2">Q1 estimated tax wire confirmation</div>
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Last upload</div>
-            <div className="display text-[20px] text-ink mt-1.5 leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display text-[20px] text-ink mt-1.5 leading-tight">
               Tucker Family RE K-1
             </div>
             <div className="text-[11.5px] text-ink-muted tabular mt-2">Today, 2:14 AM via Portal</div>
@@ -133,7 +133,7 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
               <div className="px-6 py-5 border-b border-ink/8 flex items-baseline justify-between">
                 <div>
                   <div className="eyebrow">Document Request Checklist · TY 2024</div>
-                  <h3 className="display text-[20px] text-ink mt-1" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                  <h3 className="display text-[20px] text-ink mt-1">
                     Auto-generated from prior-year return + Tucker's intake
                   </h3>
                 </div>

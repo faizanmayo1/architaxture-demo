@@ -62,7 +62,7 @@ export function IRSNotices() {
           title={
             <>
               <span className="block">Every notice,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 matched and drafted.
               </span>
             </>
@@ -82,28 +82,28 @@ export function IRSNotices() {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Open notices</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {openCount}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">requiring response</div>
           </div>
           <div className="bg-paper-card p-6 bg-ochre-50/40">
             <div className="eyebrow text-ochre-700">AI drafts ready</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               {draftReady}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">awaiting staff review</div>
           </div>
           <div className="bg-paper-card p-6 bg-crimson-soft/30">
             <div className="eyebrow text-crimson-deep">Aggregate exposure</div>
-            <div className="display tabular text-[36px] text-crimson-deep mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-crimson-deep mt-1.5 leading-none">
               {fmtUSD(totalExposure, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">across open notices</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Avg response time</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               4.2<span className="text-[18px] text-ink-muted"> d</span>
             </div>
             <div className="text-[11px] text-emerald-deep mt-2 tabular">↓ 12.4 d vs. industry avg</div>
@@ -182,7 +182,7 @@ export function IRSNotices() {
                   {notice.proposedAssessment !== 0 && (
                     <>
                       <div className="eyebrow">{notice.proposedAssessment > 0 ? "Proposed assessment" : "Refund"}</div>
-                      <div className={cn("display tabular text-[24px] leading-none mt-1", notice.proposedAssessment > 0 ? "text-crimson-deep" : "text-emerald-deep")} style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                      <div className={cn("display tabular text-[24px] leading-none mt-1", notice.proposedAssessment > 0 ? "text-crimson-deep" : "text-emerald-deep")}>
                         {fmtUSD(Math.abs(notice.proposedAssessment))}
                       </div>
                     </>

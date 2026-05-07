@@ -86,7 +86,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">The Augusta</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 Rule.
               </span>
             </>
@@ -112,7 +112,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
         <div className="grid grid-cols-5 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-5 col-span-2 bg-ochre-50/40">
             <div className="eyebrow text-ochre-700">Estimated savings · 2025</div>
-            <div className="display tabular text-[44px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[44px] text-ochre-700 mt-1.5 leading-none">
               {fmtUSD(strategy.estimatedSavings, { compact: false })}
             </div>
             <div className="text-[11.5px] text-ink-muted mt-2 tabular">
@@ -121,7 +121,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Progress</div>
-            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
               {completedCount}<span className="text-ink-muted text-[20px]">/{steps.length}</span>
             </div>
             <div className="mt-2.5 h-1 bg-paper-deep rounded-full overflow-hidden">
@@ -130,7 +130,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">AI-drafted docs</div>
-            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
               {aiDraftedDocs}<span className="text-ink-muted text-[20px]">/{totalDocs}</span>
             </div>
             <div className="text-[11.5px] text-ink-muted mt-2 tabular">awaiting staff review</div>
@@ -189,7 +189,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
                       )}>
                         <div className="flex items-start justify-between gap-4 mb-2">
                           <div className="flex items-baseline gap-3 min-w-0">
-                            <span className="display tabular text-[18px] text-ink-faint" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                            <span className="display tabular text-[18px] text-ink-faint">
                               {String(step.number).padStart(2, "0")}
                             </span>
                             <h3 className="text-[15px] font-medium text-ink leading-snug">
@@ -329,8 +329,8 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
 
 function DocumentChrome({ children, fileTitle }: { children: React.ReactNode; fileTitle: string }) {
   return (
-    <div className="bg-paper-card border border-ink/10 shadow-paper p-7 font-sans relative">
-      <div className="absolute top-3 right-3 text-[9px] font-mono text-ink-faint uppercase tracking-[0.12em]">
+    <div className="paper-doc shadow-paper-md p-7 font-sans relative rounded-sm">
+      <div className="absolute top-3 right-3 text-[9px] font-mono uppercase tracking-[0.12em] text-ink-faint">
         {fileTitle}
       </div>
       {children}
@@ -343,7 +343,7 @@ function PreviewRentalAgreement({ client }: { client: typeof TUCKER }) {
     <DocumentChrome fileTitle="Draft · v3 · 2026-05-04">
       <div className="text-center mb-5 pb-4 border-b-2 border-ink">
         <div className="eyebrow text-[10px]">Residential Rental Agreement</div>
-        <h4 className="display text-[20px] text-ink mt-2 leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 400 }}>
+        <h4 className="display text-[20px] text-ink mt-2 leading-tight">
           Tucker Residence · §280A(g) Use
         </h4>
         <div className="text-[11px] text-ink-muted mt-1 tabular">Calendar Year 2026</div>
@@ -402,7 +402,7 @@ function PreviewRentalValuation() {
     <DocumentChrome fileTitle="Final · Reviewed Apr 22">
       <div className="mb-4 pb-3 border-b border-ink/15">
         <div className="eyebrow">Comparable Rental Analysis</div>
-        <h4 className="display text-[18px] text-ink mt-1.5" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 400 }}>
+        <h4 className="display text-[18px] text-ink mt-1.5">
           Tucker Sarasota Residence
         </h4>
       </div>
@@ -476,7 +476,7 @@ function PreviewComplianceMemo() {
     <DocumentChrome fileTitle="Template · 2026-05-07">
       <div className="text-center mb-4">
         <div className="eyebrow text-[10px]">Internal Tax Memorandum</div>
-        <h4 className="display text-[18px] text-ink mt-2" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 400 }}>
+        <h4 className="display text-[18px] text-ink mt-2">
           Augusta Rule · Compliance Defense
         </h4>
         <div className="text-[10.5px] text-ink-muted mt-1 tabular">RE: Tucker · TY 2026</div>
@@ -509,7 +509,7 @@ function PreviewJournalEntry() {
     <DocumentChrome fileTitle="QBO · Pending review">
       <div className="mb-4 pb-3 border-b border-ink/15">
         <div className="eyebrow">QuickBooks Journal Entry</div>
-        <h4 className="display text-[18px] text-ink mt-1.5" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 400 }}>
+        <h4 className="display text-[18px] text-ink mt-1.5">
           Tucker Holdings LLC · 12/31/2026
         </h4>
       </div>

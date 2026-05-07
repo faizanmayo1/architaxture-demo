@@ -38,7 +38,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
           title={
             <>
               <span className="block">{notice.type}.</span>
-              <span className="italic block" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic block">
                 {notice.client}.
               </span>
             </>
@@ -68,7 +68,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
         <div className="grid grid-cols-5 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-8">
           <div className="bg-paper-card p-5 col-span-2 bg-crimson-soft/30">
             <div className="eyebrow text-crimson-deep">Proposed assessment</div>
-            <div className="display tabular text-[44px] text-crimson-deep mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[44px] text-crimson-deep mt-1.5 leading-none">
               {fmtUSD(Math.abs(notice.proposedAssessment))}
             </div>
             <div className="text-[11.5px] text-ink-muted tabular mt-2">
@@ -77,7 +77,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Response due</div>
-            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
               {fmtDate(notice.responseDue, "month-day")}
             </div>
             <div className={cn(
@@ -89,7 +89,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">AI confidence</div>
-            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
               {(notice.aiConfidence * 100).toFixed(0)}<span className="text-[14px] text-ink-muted">%</span>
             </div>
             <div className="text-[11px] text-ink-muted mt-2 tabular">recommended response quality</div>
@@ -198,11 +198,11 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
               </button>
             </div>
 
-            <div className="bg-paper-card border border-ink/10 shadow-paper p-10 font-sans">
+            <div className="paper-doc shadow-paper-lg p-10 font-sans rounded-sm">
               {/* Letterhead */}
               <div className="flex items-baseline justify-between mb-8 pb-5 border-b-2 border-ink">
                 <div>
-                  <div className="display text-[22px] text-ink leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 400 }}>
+                  <div className="display text-[22px] text-ink leading-tight">
                     Aragon Accounting Corporation
                   </div>
                   <div className="text-[11px] text-ink-muted tabular mt-1">2410 Ringling Boulevard, Suite 200 · Sarasota, FL 34237</div>
@@ -228,7 +228,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
                 <p>
                   We write on behalf of <span className="font-medium text-ink">Bryan Holcomb</span> (SSN ending
                   <span className="font-mono"> -4218</span>) in response to <span className="font-mono">Notice {notice.irsTrackingNumber}</span> dated <span>{fmtDate(notice.receivedAt, "long")}</span>,
-                  proposing additional tax of <span className="num">{fmtUSD(notice.proposedAssessment)}</span> for tax year {notice.taxYear}.
+                  proposing additional tax of <span className="font-mono tabular">{fmtUSD(notice.proposedAssessment)}</span> for tax year {notice.taxYear}.
                 </p>
 
                 <div className="bg-ochre-50/40 px-5 py-4 rounded-sm border-l-2 border-ochre-500 my-4">

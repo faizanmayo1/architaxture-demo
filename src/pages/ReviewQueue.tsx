@@ -38,7 +38,7 @@ export function ReviewQueue() {
           eyebrow="Review Queue · Tucker · 1040 (2024)"
           title={
             <span>
-              The extraction <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>credibility</span> moment
+              The extraction <span className="italic">credibility</span> moment
             </span>
           }
           subtitle="Hybrid text + vision pipeline. PDF on the left, structured data on the right. Inline editing with PATCH-allowlist guard. Null-preserving COALESCE upsert protects prior corrections."
@@ -393,7 +393,7 @@ function TabWarnings() {
   return (
     <div className="text-center py-12">
       <CheckCircle2 size={32} strokeWidth={1.4} className="text-emerald-deep mx-auto mb-3" />
-      <div className="display text-[22px] text-ink mb-1.5" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+      <div className="display text-[22px] text-ink mb-1.5">
         No confidence flags
       </div>
       <div className="text-[13px] text-ink-muted max-w-sm mx-auto">

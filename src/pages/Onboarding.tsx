@@ -53,7 +53,7 @@ export function Onboarding() {
           title={
             <>
               <span className="block">Onboarding,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 in 4 minutes.
               </span>
             </>
@@ -232,7 +232,7 @@ export function Onboarding() {
                 { q: "Did you incur any business meals, travel, or vehicle expenses through your S-Corp?", a: "Yes — see Tucker Holdings 1120S Schedule 1", auto: true },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 pb-5 border-b border-ink/6 last:border-0">
-                  <div className="display tabular text-[20px] text-ink-faint shrink-0 w-8" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                  <div className="display tabular text-[20px] text-ink-faint shrink-0 w-8">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -340,7 +340,7 @@ export function Onboarding() {
 
               <Card>
                 <CardHeader title="Time elapsed" eyebrow="This intake" />
-                <div className="display tabular text-[44px] text-ink leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                <div className="display tabular text-[44px] text-ink leading-none">
                   3:42
                 </div>
                 <div className="text-[11.5px] text-emerald-deep mt-2 tabular">

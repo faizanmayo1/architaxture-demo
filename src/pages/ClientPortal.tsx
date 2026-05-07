@@ -59,7 +59,7 @@ export function ClientPortal() {
         <div className="max-w-[1100px] mx-auto px-8 h-[64px] flex items-center justify-between">
           <Link to="/portal" className="flex items-center gap-3">
             <div className="display text-[20px] leading-none text-ink">
-              Archi<span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 300 }}>TAX</span>ture
+              Archi<span className="italic">TAX</span>ture
             </div>
             <div className="h-4 w-px bg-ink/15" />
             <span className="text-[11px] eyebrow text-ink-muted">Client Portal</span>
@@ -93,9 +93,9 @@ export function ClientPortal() {
             <ShieldCheck size={11} strokeWidth={1.8} className="text-emerald-deep" />
             <span>Signed in via magic link · {fmtDate(today, "long")}</span>
           </div>
-          <h1 className="display text-[56px] leading-[0.96] text-ink text-balance mb-3" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
+          <h1 className="display text-[56px] leading-[0.96] text-ink text-balance mb-3">
             <span className="block">Welcome back,</span>
-            <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+            <span className="italic">
               Jeffrey.
             </span>
           </h1>
@@ -110,13 +110,13 @@ export function ClientPortal() {
           <div className="flex items-baseline justify-between mb-6">
             <div>
               <div className="eyebrow mb-1.5">Your 2024 return</div>
-              <h2 className="display text-[28px] text-ink leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
-                In review · expected to file <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 360 }}>May 17</span>
+              <h2 className="display text-[28px] text-ink leading-tight">
+                In review · expected to file <span className="italic">May 17</span>
               </h2>
             </div>
             <div className="text-right">
               <div className="eyebrow text-[10px]">Projected refund</div>
-              <div className="display tabular text-[36px] text-emerald-deep mt-0.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[36px] text-emerald-deep mt-0.5 leading-none">
                 $37,700
               </div>
             </div>
@@ -166,12 +166,12 @@ export function ClientPortal() {
               <div className="px-7 py-5 border-b border-ink/8 flex items-baseline justify-between">
                 <div>
                   <div className="eyebrow mb-1">Document Checklist</div>
-                  <h3 className="display text-[20px] text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                  <h3 className="display text-[20px] text-ink">
                     {received} of {total} items received
                   </h3>
                 </div>
                 <div className="text-right">
-                  <div className="display tabular text-[24px] text-emerald-deep leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                  <div className="display tabular text-[24px] text-emerald-deep leading-none">
                     {Math.round((received / total) * 100)}<span className="text-[14px] text-ink-muted">%</span>
                   </div>
                   <div className="text-[10.5px] eyebrow mt-1">complete</div>

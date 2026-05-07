@@ -29,7 +29,7 @@ export function Stat({
   return (
     <div className={cn("flex flex-col", align === "right" && "items-end", align === "center" && "items-center", className)}>
       <div className={cn("eyebrow", labelSize)}>{label}</div>
-      <div className={cn("display tabular text-ink mt-1", valueSize)} style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+      <div className={cn("display tabular text-ink mt-1", valueSize)}>
         {value}
       </div>
       {sub && <div className="text-[12px] text-ink-muted mt-0.5 tabular">{sub}</div>}

@@ -118,7 +118,7 @@ export function Sidebar() {
         <Link to="/" className="block group">
           <div className="flex items-baseline gap-2">
             <div className="display text-[26px] leading-none text-ink">
-              Archi<span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 300 }}>TAX</span>ture
+              Archi<span className="italic">TAX</span>ture
             </div>
           </div>
           <div className="eyebrow mt-1.5">

@@ -63,7 +63,7 @@ export function Documents() {
           title={
             <>
               <span className="block">Every paper,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 sorted automatically.
               </span>
             </>
@@ -89,28 +89,28 @@ export function Documents() {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Documents · 30 days</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {RECENT_DOCUMENTS.length * 23}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">across {FIRM_KPIS.activeClients} clients</div>
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Auto-classified</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               94<span className="text-[18px] text-ink-muted">%</span>
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">avg confidence 0.96</div>
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Outstanding requests</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {FIRM_KPIS.documentsOutstanding}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">across all clients · agent chasing</div>
           </div>
           <div className="bg-ochre-50/40 p-5">
             <div className="eyebrow text-ochre-700">Needs review</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               {needsReview}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">low-confidence flags</div>

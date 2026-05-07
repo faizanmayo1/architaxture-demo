@@ -72,7 +72,7 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">Where the savings</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 actually live.
               </span>
             </>
@@ -92,28 +92,28 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Total potential</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(totalEstSavings, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted mt-2">across {strategies.length} strategies, all eligibilities</div>
           </div>
           <div className="bg-emerald-soft/30 p-6">
             <div className="eyebrow text-emerald-deep">Adopted savings</div>
-            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none">
               {fmtUSD(adoptedSavings, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted mt-2 tabular">{adoptedCount} strategies live in 2025 forecast</div>
           </div>
           <div className="bg-ochre-50/40 p-6">
             <div className="eyebrow text-ochre-700">Recommended (next)</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               {fmtUSD(recommendedSavings, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted mt-2 tabular">{recommendedCount} strategies awaiting adoption</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Adoption rate</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {Math.round((adoptedCount / strategies.length) * 100)}<span className="text-[20px] text-ink-muted">%</span>
             </div>
             <div className="text-[11px] text-ink-muted mt-2 tabular">peer benchmark · 28%</div>
@@ -156,7 +156,7 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
                       ● {s.eligibility}
                     </span>
                   </div>
-                  <h3 className="display text-[24px] leading-[1.05] text-ink mt-2 text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 40', fontWeight: 380 }}>
+                  <h3 className="display text-[24px] leading-[1.05] text-ink mt-2 text-balance">
                     {s.name}
                   </h3>
                   <p className="text-[12.5px] text-ink-soft mt-3 leading-relaxed line-clamp-3">
@@ -175,7 +175,7 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
                   <div className="mt-5 flex items-end justify-between">
                     <div>
                       <div className="eyebrow">Est. savings</div>
-                      <div className="display tabular text-[28px] text-ink leading-none mt-1" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                      <div className="display tabular text-[28px] text-ink leading-none mt-1">
                         {fmtUSD(s.estimatedSavings, { compact: true })}
                       </div>
                     </div>
@@ -273,7 +273,7 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
         <div className="mt-10 pt-8 border-t border-ink/8 grid grid-cols-12 gap-8">
           <div className="col-span-5">
             <div className="eyebrow mb-3">How this is generated</div>
-            <h4 className="display text-[20px] leading-snug text-ink mb-3" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60', fontWeight: 380 }}>
+            <h4 className="display text-[20px] leading-snug text-ink mb-3">
               AI first-pass, staff override, audit trail
             </h4>
           </div>

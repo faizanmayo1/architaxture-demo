@@ -64,7 +64,7 @@ export function Reports() {
           title={
             <>
               <span className="block">The numbers</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 behind the firm.
               </span>
             </>
@@ -91,7 +91,7 @@ export function Reports() {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Revenue · YTD</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(FIRM_KPIS.ytdRevenue, { compact: true })}
             </div>
             <div className="text-[11px] text-emerald-deep mt-2 tabular flex items-center gap-1">
@@ -101,7 +101,7 @@ export function Reports() {
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Returns Filed</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {FIRM_KPIS.returnsFiledThisYear}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">
@@ -110,7 +110,7 @@ export function Reports() {
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Avg Turnaround</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {FIRM_KPIS.avgTurnaround}<span className="text-[18px] text-ink-muted"> d</span>
             </div>
             <div className="text-[11px] text-emerald-deep mt-2 tabular flex items-center gap-1">
@@ -120,7 +120,7 @@ export function Reports() {
           </div>
           <div className="bg-paper-card p-6 bg-ochre-50/30">
             <div className="eyebrow text-ochre-700">Strategy Adoption</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               26<span className="text-[18px] text-ink-muted">%</span>
             </div>
             <div className="text-[11px] text-ink-muted mt-2 tabular">
@@ -205,7 +205,7 @@ export function Reports() {
               {revenueByService.map((s, i) => (
                 <div key={s.service} className="flex items-baseline justify-between gap-3 group">
                   <div className="flex items-baseline gap-3 min-w-0">
-                    <span className="display tabular text-[14px] text-ink-faint shrink-0" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                    <span className="display tabular text-[14px] text-ink-faint shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="text-[13px] text-ink-soft truncate">{s.service}</span>
@@ -225,7 +225,7 @@ export function Reports() {
         <Card padded={false} className="mb-8 overflow-hidden">
           <div className="px-7 pt-6 pb-4">
             <div className="eyebrow mb-1">Staff performance · YTD 2026</div>
-            <h3 className="display text-[22px] text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <h3 className="display text-[22px] text-ink">
               Throughput by team member
             </h3>
           </div>
@@ -281,7 +281,7 @@ export function Reports() {
                     <div className={cn("w-2.5 h-2.5 rounded-full", t.color)} />
                     <div className="eyebrow">{t.tier}</div>
                   </div>
-                  <div className="display tabular text-[28px] text-ink mt-1 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                  <div className="display tabular text-[28px] text-ink mt-1 leading-none">
                     {t.count}
                     <span className="text-[12px] text-ink-muted ml-1.5">clients</span>
                   </div>

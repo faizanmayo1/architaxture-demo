@@ -36,9 +36,9 @@ export function FirmOverview() {
 
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-7">
-            <div className="display text-[64px] leading-[0.94] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
+            <div className="display text-[64px] leading-[0.94] text-ink text-balance">
               <span className="block">Good morning,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 Eric.
               </span>
             </div>
@@ -69,7 +69,7 @@ export function FirmOverview() {
           <div className="col-span-5 grid grid-cols-2 gap-px bg-ink/8 border border-ink/8 rounded-sm self-end">
             <div className="bg-paper-card p-5">
               <div className="eyebrow text-[10px]">YTD Revenue</div>
-              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
                 {fmtUSD(FIRM_KPIS.ytdRevenue, { compact: true })}
               </div>
               <div className="text-[10.5px] text-emerald-deep mt-1.5 tabular">
@@ -78,7 +78,7 @@ export function FirmOverview() {
             </div>
             <div className="bg-paper-card p-5">
               <div className="eyebrow text-[10px]">Returns YTD</div>
-              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
                 {FIRM_KPIS.returnsFiledThisYear}
                 <span className="text-[16px] text-ink-muted">/{FIRM_KPIS.returnsInProgress + FIRM_KPIS.returnsFiledThisYear}</span>
               </div>
@@ -86,7 +86,7 @@ export function FirmOverview() {
             </div>
             <div className="bg-paper-card p-5">
               <div className="eyebrow text-[10px]">Avg turnaround</div>
-              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
                 {FIRM_KPIS.avgTurnaround}<span className="text-[14px] text-ink-muted"> days</span>
               </div>
               <div className="text-[10.5px] text-emerald-deep mt-1.5 tabular">
@@ -95,7 +95,7 @@ export function FirmOverview() {
             </div>
             <div className="bg-paper-card p-5">
               <div className="eyebrow text-[10px]">Aggregate strategy savings</div>
-              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[28px] text-ink mt-1.5 leading-none">
                 {fmtUSD(FIRM_KPIS.strategiesEstimatedSavings, { compact: true })}
               </div>
               <div className="text-[10.5px] text-ink-muted mt-1.5 tabular">{FIRM_KPIS.strategiesAdopted} adopted</div>
@@ -112,7 +112,7 @@ export function FirmOverview() {
           <div className="flex items-end justify-between mb-5">
             <div>
               <div className="eyebrow mb-1">Today's focus</div>
-              <h2 className="display text-[26px] text-ink leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <h2 className="display text-[26px] text-ink leading-tight">
                 Top 3 of {BRIEFING_ITEMS.length} from this morning's briefing
               </h2>
             </div>
@@ -129,7 +129,7 @@ export function FirmOverview() {
                 to={`/clients/${item.clientId}`}
                 className="card p-5 group hover:shadow-paper-md transition-all flex items-start gap-5"
               >
-                <div className="display tabular text-[36px] text-ink-faint leading-none shrink-0" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                <div className="display tabular text-[36px] text-ink-faint leading-none shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -146,7 +146,7 @@ export function FirmOverview() {
                     <div className={cn(
                       "display tabular text-[24px] leading-none mt-1",
                       item.estimatedValue > 0 ? "text-emerald-deep" : "text-crimson-deep"
-                    )} style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                    )}>
                       {fmtUSD(Math.abs(item.estimatedValue), { compact: true })}
                     </div>
                   </div>

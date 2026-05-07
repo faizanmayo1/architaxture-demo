@@ -62,7 +62,7 @@ export function ClientHub({ clientId = 60 }: ClientHubProps) {
           title={
             <>
               <span className="block">{client.firstName} L.</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 {client.lastName}
               </span>
             </>
@@ -194,7 +194,7 @@ export function ClientHub({ clientId = 60 }: ClientHubProps) {
                       </div>
                       <div className="text-[11px] text-ink-muted tabular">Form {entity.formType}</div>
                       <div className="text-right">
-                        <div className="display tabular text-[22px] text-ink leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                        <div className="display tabular text-[22px] text-ink leading-none">
                           {entity.ownership}<span className="text-[14px] text-ink-muted">%</span>
                         </div>
                         <div className="eyebrow mt-1 text-[9px]">Owned</div>
@@ -333,7 +333,7 @@ export function ClientHub({ clientId = 60 }: ClientHubProps) {
                 ].map((d, i) => (
                   <div key={i} className="flex items-baseline gap-3">
                     <div className="w-12 shrink-0">
-                      <div className="display text-[14px] text-ink leading-none tabular" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                      <div className="display text-[14px] text-ink leading-none tabular">
                         {fmtDate(d.date, "month-day").split(" ")[1]}
                       </div>
                       <div className="text-[10px] eyebrow mt-0.5">{fmtDate(d.date, "month-day").split(" ")[0]}</div>

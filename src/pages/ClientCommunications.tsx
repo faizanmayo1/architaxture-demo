@@ -112,7 +112,7 @@ export function ClientCommunications({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">Every</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 conversation.
               </span>
             </>
