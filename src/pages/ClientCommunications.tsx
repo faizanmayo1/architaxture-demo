@@ -88,14 +88,6 @@ const typeConfig: Record<CommType, { icon: typeof MessageSquare; color: string; 
 export function ClientCommunications({ clientId }: { clientId: number }) {
   const client = TUCKER;
 
-  const tabs = [
-    { label: "Overview", path: `/clients/${client.id}` },
-    { label: "Forecasts", path: `/clients/${client.id}/forecast` },
-    { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
-    { label: "Documents", path: `/clients/${client.id}/documents` },
-    { label: "Engagements", path: `/clients/${client.id}/engagements` },
-    { label: "Communications", path: `/clients/${client.id}/communications`, active: true },
-  ];
 
   const sortedComms = [...COMMS].sort((a, b) => new Date(b.when).getTime() - new Date(a.when).getTime());
 
@@ -109,14 +101,7 @@ export function ClientCommunications({ clientId }: { clientId: number }) {
             { label: "Communications" },
           ]}
           eyebrow="Unified communication record · 6 touchpoints in last 30 days"
-          title={
-            <>
-              <span className="block">Every</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                conversation.
-              </span>
-            </>
-          }
+          title="Every conversation."
           subtitle="Email threads (per-staff Gmail sync), meeting transcripts (Fathom), portal messages, SMS (Twilio). AI extracts action items from every touchpoint and routes them to the right owner."
           action={
             <button className="flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">
@@ -125,18 +110,6 @@ export function ClientCommunications({ clientId }: { clientId: number }) {
             </button>
           }
         />
-      </div>
-
-      {/* Tabs */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
-        <div className="flex items-end gap-1 max-w-[1280px]">
-          {tabs.map((tab) => (
-            <Link key={tab.path} to={tab.path} className={cn("px-4 py-3 text-[13px] tracking-tight transition-colors relative", tab.active ? "text-ink" : "text-ink-muted hover:text-ink")}>
-              {tab.label}
-              {tab.active && <span className="absolute left-0 right-0 bottom-0 h-px bg-ochre-500" />}
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div className="px-10 py-10 max-w-[1280px]">

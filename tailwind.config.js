@@ -5,54 +5,57 @@ export default {
     extend: {
       colors: {
         // ─────────────────────────────────────────────────────────
-        // Aragon brand palette — white surfaces, charcoal ink,
-        // sky-blue accent (matches the Aragon Accounting logo).
+        // Aragon — premium financial product palette
+        // White canvas · charcoal ink · deep navy primary · sky accent
         // ─────────────────────────────────────────────────────────
         paper: {
-          DEFAULT: "#FFFFFF",   // pure white background
-          deep: "#F5F6F8",      // recessed (very light gray)
-          card: "#FFFFFF",      // raised cards — white with shadow
-          edge: "#E8EAEE",      // hairline border
+          DEFAULT: "#FFFFFF",
+          deep: "#F7F8FA",      // recessed sections (slight cool gray)
+          card: "#FFFFFF",
+          edge: "#E5E7EB",      // hairline border
         },
         ink: {
-          DEFAULT: "#2D2E33",   // Aragon wordmark charcoal
-          soft: "#4A4C53",
-          muted: "#7A7C82",
-          faint: "#A8AAB0",
-          line: "#E2E4E8",
+          DEFAULT: "#15171A",   // crisper than #2D2E33 for premium contrast
+          soft: "#3D4047",
+          muted: "#6E7280",
+          faint: "#9CA0A8",
+          line: "#E5E7EB",
         },
-        // "ochre" name kept for compatibility but values are now Aragon sky blue
+        // "ochre" stays as the alias used throughout the codebase.
+        // 50–100: ambient sky-blue washes
+        // 500: Aragon brand sky-blue (logo accent)
+        // 600–800: deepening to navy primary (for buttons, emphasis)
         ochre: {
-          50: "#EFF8FD",
-          100: "#DCEFF8",
-          200: "#B8DEF1",
-          300: "#92CAE5",
-          400: "#6FB6D6",
-          500: "#9DD6F2",       // Aragon primary brand sky blue
-          600: "#5DA3C5",
-          700: "#3F7FA0",
-          800: "#2D5C77",
+          50: "#F0F7FB",
+          100: "#DBEBF5",
+          200: "#B8DBED",
+          300: "#8DC4E0",
+          400: "#5DA3C5",
+          500: "#9DD6F2",       // brand sky-blue (logo)
+          600: "#3F7FA0",       // primary action navy
+          700: "#2D5C77",       // hover/pressed primary
+          800: "#1F4259",
         },
-        // Direct brand alias for clarity
         aragon: {
-          50: "#EFF8FD",
-          100: "#DCEFF8",
-          blue: "#9DD6F2",      // logo accent
-          ink: "#2D2E33",       // wordmark charcoal
-          mid: "#888A91",       // monogram ring gray
-          soft: "#7A7C82",      // subtitle gray
+          50: "#F0F7FB",
+          100: "#DBEBF5",
+          blue: "#9DD6F2",
+          navy: "#2D5C77",      // deep brand navy for primary CTAs
+          ink: "#15171A",
+          mid: "#888A91",
+          soft: "#6E7280",
         },
         emerald: {
-          deep: "#1F8055",
-          soft: "#E2F2EC",
+          deep: "#057A55",
+          soft: "#E2F4EC",
         },
         crimson: {
-          deep: "#B43E3E",
-          soft: "#FBE4E4",
+          deep: "#B43432",
+          soft: "#FBE5E5",
         },
         sky: {
-          deep: "#3F7FA0",
-          soft: "#E8F4FB",
+          deep: "#2D5C77",
+          soft: "#E5F1F9",
         },
       },
       fontFamily: {
@@ -63,18 +66,25 @@ export default {
       fontSize: {
         '2xs': ['10px', { lineHeight: '14px', letterSpacing: '0.06em' }],
       },
+      letterSpacing: {
+        'crisp': '-0.022em',
+      },
       boxShadow: {
-        // Large premium shadows for elevated cards on white bg
-        'paper': '0 1px 2px rgba(45, 46, 51, 0.04), 0 4px 12px -2px rgba(45, 46, 51, 0.06), 0 0 0 1px rgba(45, 46, 51, 0.04)',
-        'paper-md': '0 2px 4px rgba(45, 46, 51, 0.04), 0 12px 28px -4px rgba(45, 46, 51, 0.10), 0 0 0 1px rgba(45, 46, 51, 0.04)',
-        'paper-lg': '0 4px 8px rgba(45, 46, 51, 0.04), 0 24px 48px -8px rgba(45, 46, 51, 0.14), 0 0 0 1px rgba(45, 46, 51, 0.05)',
-        'card-rest': '0 1px 3px rgba(45, 46, 51, 0.05), 0 6px 16px -4px rgba(45, 46, 51, 0.08), 0 0 0 1px rgba(45, 46, 51, 0.04)',
-        'card-hover': '0 2px 6px rgba(45, 46, 51, 0.06), 0 16px 32px -6px rgba(45, 46, 51, 0.14), 0 0 0 1px rgba(45, 46, 51, 0.06)',
-        'glow-aragon': '0 0 0 1px rgba(157, 214, 242, 0.4), 0 8px 24px -4px rgba(157, 214, 242, 0.4)',
-        'inset-edge': 'inset 0 -1px 0 rgba(45, 46, 51, 0.06)',
+        // Refined shadow scale — premium financial product
+        'paper': '0 1px 2px rgba(21, 23, 26, 0.04), 0 4px 8px -2px rgba(21, 23, 26, 0.04), 0 0 0 1px rgba(21, 23, 26, 0.05)',
+        'paper-md': '0 2px 4px rgba(21, 23, 26, 0.04), 0 12px 24px -4px rgba(21, 23, 26, 0.08), 0 0 0 1px rgba(21, 23, 26, 0.05)',
+        'paper-lg': '0 4px 8px rgba(21, 23, 26, 0.04), 0 24px 40px -8px rgba(21, 23, 26, 0.12), 0 0 0 1px rgba(21, 23, 26, 0.05)',
+        'paper-xl': '0 8px 16px rgba(21, 23, 26, 0.06), 0 32px 64px -12px rgba(21, 23, 26, 0.18), 0 0 0 1px rgba(21, 23, 26, 0.06)',
+        'card-rest': '0 1px 2px rgba(21, 23, 26, 0.04), 0 6px 14px -4px rgba(21, 23, 26, 0.06), 0 0 0 1px rgba(21, 23, 26, 0.05)',
+        'card-hover': '0 4px 8px rgba(21, 23, 26, 0.06), 0 16px 28px -6px rgba(21, 23, 26, 0.12), 0 0 0 1px rgba(21, 23, 26, 0.07)',
+        'btn-primary': '0 1px 2px rgba(21, 23, 26, 0.12), 0 4px 8px -2px rgba(21, 23, 26, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+        'btn-primary-hover': '0 2px 4px rgba(21, 23, 26, 0.15), 0 8px 14px -2px rgba(21, 23, 26, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.10)',
+        'glow-sky': '0 0 0 4px rgba(157, 214, 242, 0.25)',
+        'glow-navy': '0 0 0 4px rgba(45, 92, 119, 0.18)',
+        'inset-edge': 'inset 0 -1px 0 rgba(21, 23, 26, 0.06)',
       },
       backgroundImage: {
-        'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        'mesh-light': 'radial-gradient(at 100% 0%, rgba(157, 214, 242, 0.08) 0%, transparent 40%), radial-gradient(at 0% 100%, rgba(45, 92, 119, 0.04) 0%, transparent 40%)',
       },
       keyframes: {
         'fade-up': {
@@ -89,11 +99,16 @@ export default {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
+        'scale-in': {
+          '0%': { opacity: '0', transform: 'scale(0.96)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
       },
       animation: {
-        'fade-up': 'fade-up 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
-        'fade-in': 'fade-in 400ms ease-out both',
+        'fade-up': 'fade-up 500ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
+        'fade-in': 'fade-in 350ms ease-out both',
         'shimmer': 'shimmer 2.5s linear infinite',
+        'scale-in': 'scale-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
       },
     },
   },

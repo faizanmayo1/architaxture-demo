@@ -60,14 +60,7 @@ export function Documents() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="Document Intelligence · Phase 2 module"
-          title={
-            <>
-              <span className="block">Every paper,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                sorted automatically.
-              </span>
-            </>
-          }
+          title="Every paper, sorted automatically."
           subtitle="AI auto-classifies, names, and routes every document on arrival. Cross-references against open document requests, deduplicates, surfaces low-confidence flags. Paper chase ends here."
           action={
             <div className="flex items-center gap-2.5">

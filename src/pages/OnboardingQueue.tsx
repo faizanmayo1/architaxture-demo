@@ -155,14 +155,7 @@ export function OnboardingQueue() {
             { label: "Onboarding Queue" },
           ]}
           eyebrow="Onboarding Queue · Operations · Per brief 2.8"
-          title={
-            <>
-              <span className="block">In the</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                pipeline.
-              </span>
-            </>
-          }
+          title="In the pipeline."
           subtitle="Every signed client between proposal and activation. Inline staff assignment, questionnaire completion status, document collection progress, and blocking items surfaced as action items in the Morning Briefing."
           action={
             <Link

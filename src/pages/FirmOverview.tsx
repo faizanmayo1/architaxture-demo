@@ -36,12 +36,9 @@ export function FirmOverview() {
 
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-7">
-            <div className="display text-[64px] leading-[0.94] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
-              <span className="block">Good morning,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                Eric.
-              </span>
-            </div>
+            <h1 className="display text-[34px] text-ink leading-[1.15] tracking-crisp whitespace-nowrap">
+              Good morning, Eric.
+            </h1>
             <p className="text-[15px] text-ink-muted mt-5 max-w-xl leading-relaxed">
               The firm brain reasoned across <span className="text-ink">235 clients</span> overnight.
               Six items need attention today, headlined by Tucker's return — now ready to file —

@@ -69,14 +69,7 @@ export function TaxPlanning({ clientId }: { clientId: number }) {
             { label: "Tax Planning" },
           ]}
           eyebrow={`Strategy Review · ${strategies.length} firm-defined strategies`}
-          title={
-            <>
-              <span className="block">Where the savings</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                actually live.
-              </span>
-            </>
-          }
+          title="Where the savings actually live."
           subtitle="AI-generated recommendations with first-pass savings estimates. Staff override on each. Adopted strategies feed the Forecasting model in real time."
           action={
             <div className="flex items-center gap-2.5">

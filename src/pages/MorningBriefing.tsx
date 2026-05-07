@@ -52,12 +52,9 @@ export function MorningBriefing() {
 
         <div className="grid grid-cols-12 gap-8 items-end">
           <div className="col-span-8">
-            <div className="display text-[68px] leading-[0.92] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
-              <span className="block">Thursday's</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                Briefing.
-              </span>
-            </div>
+            <h1 className="display text-[34px] text-ink leading-[1.15] tracking-crisp whitespace-nowrap">
+              Thursday's Briefing.
+            </h1>
             <p className="text-[15px] text-ink-muted mt-5 max-w-xl leading-relaxed">
               Six items need a partner's eyes today. Ranked by urgency, then by potential value to the
               client. Drafted responses, recommended actions, and ownership inferred from the engagement model.
