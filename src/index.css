@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ────────────────────────────────────────────────────────────
+   Editorial-financial design system
+   Cream paper + ink + ochre. Fraunces / Plex Sans / Plex Mono.
+   ──────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --paper: 250 247 240;
+    --paper-deep: 244 239 227;
+    --paper-card: 255 254 251;
+    --ink: 14 14 18;
+    --ochre: 184 101 30;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "ss02", "kern";
+  }
+
+  body {
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    background-color: rgb(var(--paper));
+    color: rgb(var(--ink));
+    font-size: 14px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+
+  /* tabular figures by default in numeric contexts — financial product */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum", "ss01";
+  }
+
+  ::selection {
+    background-color: rgb(var(--ochre) / 0.18);
+    color: rgb(var(--ink));
+  }
+
+  /* Custom scrollbar — restrained */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(14 14 18 / 0.12);
+    border-radius: 0;
+    border: 3px solid rgb(var(--paper));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(14 14 18 / 0.24);
+  }
+}
+
+@layer components {
+  /* Display headings — Fraunces with optical sizing */
+  .display {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.96;
+  }
+
+  .display-soft {
+    font-family: "Fraunces", Georgia, serif;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-weight: 380;
+    letter-spacing: -0.022em;
+  }
+
+  /* Eyebrow — small caps style label */
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(14 14 18 / 0.55);
+  }
+
+  /* Hairline rule */
+  .hairline {
+    border: none;
+    border-top: 1px solid rgb(14 14 18 / 0.08);
+    margin: 0;
+  }
+
+  /* Card — subtle elevation, hairline border */
+  .card {
+    background-color: rgb(var(--paper-card));
+    border: 1px solid rgb(14 14 18 / 0.06);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgb(14 14 18 / 0.03);
+  }
+
+  /* Tabular cells */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: -0.01em;
+  }
+
+  /* Sidebar nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2 text-[13px] text-ink-soft hover:bg-paper-deep transition-colors duration-150 cursor-pointer;
+  }
+  .nav-item.active {
+    @apply text-ink bg-paper-deep;
+  }
+  .nav-item.active::before {
+    content: "";
+    width: 2px;
+    height: 14px;
+    background-color: rgb(var(--ochre));
+    margin-left: -16px;
+    margin-right: 14px;
+  }
+
+  /* Pill */
+  .pill {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-[11px] font-medium rounded-full border;
+  }
+
+  /* Page title block */
+  .page-title {
+    @apply mb-8 pb-6 border-b border-ink/10;
+  }
+}
+
+@layer utilities {
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 0;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
