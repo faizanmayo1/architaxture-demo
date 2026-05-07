@@ -44,7 +44,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">Forecast,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 quarterly.
               </span>
             </>
@@ -98,7 +98,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Projected AGI · 2025</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(activeVersion.totalProjectedAGI, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">
@@ -107,7 +107,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Total Federal Tax</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(activeVersion.totalProjectedTax, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">
@@ -120,7 +120,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Effective Rate</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtPctRaw(activeVersion.effectiveRate * 100, 1)}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">
@@ -129,7 +129,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
           </div>
           <div className="bg-paper-card p-6 bg-emerald-soft/30">
             <div className="eyebrow text-emerald-deep">Projected Refund</div>
-            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none">
               {fmtUSD(37700, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">
@@ -169,7 +169,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
           <div className="px-7 pt-6 pb-4 flex items-end justify-between border-b border-ink/8">
             <div>
               <div className="eyebrow">Household tax estimate</div>
-              <h3 className="display text-[22px] text-ink mt-1" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <h3 className="display text-[22px] text-ink mt-1">
                 Line-by-line · prior year vs projected
               </h3>
             </div>
@@ -250,7 +250,7 @@ export function Forecasting({ clientId }: { clientId: number }) {
                   <div key={i} className={cn("bg-paper-card p-5", i === 0 && "bg-ochre-50/40")}>
                     <div className="flex items-baseline justify-between mb-3">
                       <div className="text-[13px] font-medium text-ink truncate pr-2">{k1.partnerName}</div>
-                      <div className="display tabular text-[18px] text-ink-soft" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                      <div className="display tabular text-[18px] text-ink-soft">
                         {k1.ownership}<span className="text-[11px] text-ink-muted">%</span>
                       </div>
                     </div>

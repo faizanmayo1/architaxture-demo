@@ -4,63 +4,70 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Editorial-financial palette — paper + ink + ochre
+        // ─────────────────────────────────────────────────────────
+        // "Midnight Atelier" — premium dark editorial
+        // Deep ink base + warm brass accent + ivory text
+        // ─────────────────────────────────────────────────────────
         paper: {
-          DEFAULT: "#FAF7F0",   // warm cream background
-          deep: "#F4EFE3",      // recessed
-          card: "#FFFEFB",      // raised
-          edge: "#EDE6D6",      // hairline
+          DEFAULT: "#0B0B12",   // base background — deep ink with cool undertone
+          deep: "#07070C",      // recessed surface
+          card: "#14141C",      // raised card surface
+          edge: "#1F1F28",      // hairline border / strong divider
         },
         ink: {
-          DEFAULT: "#0E0E12",   // near-black
-          soft: "#2A2A33",
-          muted: "#6B6B78",
-          faint: "#9A9AA6",
-          line: "#D9D6CC",
+          DEFAULT: "#F5F0E2",   // warm ivory — primary text
+          soft: "#C8C3B5",      // secondary text
+          muted: "#857F70",     // muted text
+          faint: "#5A5448",     // faint text
+          line: "#2A2823",      // very faint divider
         },
+        // Rich warm gold — brushed brass, not yellow
+        // Dark theme: low scale values are saturated mid-tones so /20-/60 alpha
+        // creates a visible warm wash over dark bg (vs invisible).
         ochre: {
-          50: "#FBF4E8",
-          100: "#F4E2C2",
-          200: "#E8C58A",
-          300: "#D9A458",
-          400: "#C8842F",
-          500: "#B8651E",       // primary accent
-          600: "#9A4F12",
-          700: "#7A3D0E",
-          800: "#5A2D0A",
+          50: "#5A3F1C",        // warm mid-brown — at /30-/50 alpha = warm wash
+          100: "#7A5526",
+          200: "#9C7028",
+          300: "#B58741",
+          400: "#C49539",
+          500: "#D4A453",       // primary accent — brushed brass gold
+          600: "#E0B568",
+          700: "#EBC681",       // for emphasis text on dark
+          800: "#F4D89E",
         },
         emerald: {
-          deep: "#1F5C3F",
-          soft: "#D4E5DA",
+          deep: "#6FB78C",      // emphasis / dot
+          soft: "#2A5544",      // mid-green — at low alpha = visible green wash
         },
         crimson: {
-          deep: "#8C2A2A",
-          soft: "#F1D8D4",
+          deep: "#E27575",
+          soft: "#552A2D",
         },
         sky: {
-          deep: "#2C5878",
-          soft: "#D5E1EC",
+          deep: "#8AB4D9",
+          soft: "#264A5E",
         },
       },
       fontFamily: {
-        display: ['"Fraunces"', 'Georgia', 'serif'],
-        sans: ['"IBM Plex Sans"', '-apple-system', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', '"SF Mono"', 'monospace'],
+        display: ['"Roboto"', '-apple-system', 'sans-serif'],
+        sans: ['"Roboto"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['"Roboto Mono"', '"SF Mono"', 'monospace'],
       },
       fontSize: {
         '2xs': ['10px', { lineHeight: '14px', letterSpacing: '0.06em' }],
       },
-      fontVariationSettings: {
-        'display-soft': '"opsz" 144, "SOFT" 50',
-        'display-hard': '"opsz" 144, "SOFT" 0',
-      },
       boxShadow: {
-        'paper': '0 1px 0 rgba(14,14,18,0.04), 0 1px 2px rgba(14,14,18,0.04)',
-        'paper-md': '0 1px 0 rgba(14,14,18,0.06), 0 4px 16px -2px rgba(14,14,18,0.06)',
-        'inset-edge': 'inset 0 -1px 0 rgba(14,14,18,0.06)',
+        // Premium dark shadows — ambient + key light
+        'paper': '0 1px 0 rgba(0,0,0,0.4), 0 0 0 1px rgba(255, 245, 220, 0.04), inset 0 1px 0 rgba(255, 245, 220, 0.02)',
+        'paper-md': '0 1px 0 rgba(0,0,0,0.5), 0 8px 24px -4px rgba(0,0,0,0.6), 0 0 0 1px rgba(255, 245, 220, 0.06), inset 0 1px 0 rgba(255, 245, 220, 0.04)',
+        'paper-lg': '0 24px 48px -8px rgba(0,0,0,0.65), 0 0 0 1px rgba(255, 245, 220, 0.08), inset 0 1px 0 rgba(255, 245, 220, 0.05)',
+        'glow-ochre': '0 0 24px -2px rgba(212, 164, 83, 0.35), 0 0 0 1px rgba(212, 164, 83, 0.25)',
+        'inset-edge': 'inset 0 -1px 0 rgba(255, 245, 220, 0.06)',
       },
       backgroundImage: {
-        'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.92 0 0 0 0 0.85 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        'radial-glow': 'radial-gradient(ellipse at top right, rgba(212, 164, 83, 0.08) 0%, transparent 50%)',
+        'radial-vignette': 'radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.4) 100%)',
       },
       keyframes: {
         'fade-up': {
@@ -75,11 +82,16 @@ export default {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
+        'glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(212, 164, 83, 0.4)' },
+          '50%': { boxShadow: '0 0 0 8px rgba(212, 164, 83, 0)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both',
         'fade-in': 'fade-in 400ms ease-out both',
         'shimmer': 'shimmer 2.5s linear infinite',
+        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
       },
     },
   },

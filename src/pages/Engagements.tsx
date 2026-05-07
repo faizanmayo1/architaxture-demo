@@ -54,7 +54,7 @@ export function Engagements() {
           title={
             <>
               <span className="block">All work,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 in one column.
               </span>
             </>
@@ -74,28 +74,28 @@ export function Engagements() {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Active engagements</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {activeCount}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">across {Object.keys(grouped).length} categories</div>
           </div>
           <div className="bg-paper-card p-6 bg-ochre-50/30">
             <div className="eyebrow text-ochre-700">Renewals · 60 days</div>
-            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ochre-700 mt-1.5 leading-none">
               {renewalsThisMonth + 1}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">2026 letter not yet signed</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Fees in this view</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(totalFees, { compact: true })}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">contracted scope</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Auto-drafted letters</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               <Sparkles size={22} strokeWidth={1.8} className="inline-block text-ochre-500 -translate-y-1" /> 14
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">via Engagement Letter Agent</div>
@@ -131,7 +131,7 @@ export function Engagements() {
               <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-ink/8">
                 <div className="flex items-baseline gap-3">
                   <ClipboardList size={14} strokeWidth={1.6} className="text-ink-muted" />
-                  <span className="display text-[18px] text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 40', fontWeight: 380 }}>
+                  <span className="display text-[18px] text-ink">
                     {category}
                   </span>
                   <span className="text-[11px] text-ink-muted tabular">{categoryItems.length} {categoryItems.length === 1 ? "item" : "items"}</span>

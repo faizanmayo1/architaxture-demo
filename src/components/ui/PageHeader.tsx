@@ -35,7 +35,7 @@ export function PageHeader({
       <div className="flex items-end justify-between gap-6 flex-wrap">
         <div className="min-w-0">
           {eyebrow && <div className="eyebrow mb-3">{eyebrow}</div>}
-          <h1 className="display text-[42px] leading-[0.96] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+          <h1 className="display text-[42px] leading-[0.96] text-ink text-balance">
             {title}
           </h1>
           {subtitle && (

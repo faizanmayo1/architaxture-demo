@@ -124,7 +124,7 @@ export function FormGeneration() {
           title={
             <>
               <span className="block">Forms,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 pre-filled.
               </span>
             </>
@@ -144,28 +144,28 @@ export function FormGeneration() {
         <div className="grid grid-cols-4 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Form library</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {FORMS.length}<span className="text-[18px] text-ink-muted"> templates</span>
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">+ growing per Phase 4 build</div>
           </div>
           <div className="bg-paper-card p-6 bg-emerald-soft/30">
             <div className="eyebrow text-emerald-deep">Generated for Tucker</div>
-            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-emerald-deep mt-1.5 leading-none">
               {generated}
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">forms in client file</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Avg generation time</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               38<span className="text-[18px] text-ink-muted"> sec</span>
             </div>
             <div className="text-[11px] text-emerald-deep tabular mt-2">vs. 12 min manual</div>
           </div>
           <div className="bg-paper-card p-6">
             <div className="eyebrow">Field accuracy</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               99.6<span className="text-[18px] text-ink-muted">%</span>
             </div>
             <div className="text-[11px] text-ink-muted tabular mt-2">across 12,400 generated forms</div>
@@ -193,7 +193,7 @@ export function FormGeneration() {
                   >
                     <div className="flex items-baseline justify-between mb-2">
                       <div className="flex items-baseline gap-3">
-                        <span className="display tabular text-[18px] text-ink leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                        <span className="display tabular text-[18px] text-ink leading-none">
                           Form {f.number}
                         </span>
                         <Pill variant={categoryConfig[f.category]}>{f.category}</Pill>

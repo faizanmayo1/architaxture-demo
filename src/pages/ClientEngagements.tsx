@@ -69,7 +69,7 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
           title={
             <>
               <span className="block">The book</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 of work.
               </span>
             </>
@@ -95,21 +95,21 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
         <div className="grid grid-cols-3 gap-px bg-ink/8 border border-ink/8 rounded-sm overflow-hidden mb-10">
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Active engagements</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {TUCKER_ENGAGEMENTS.length}
             </div>
             <div className="text-[11.5px] text-ink-muted tabular mt-2">across 3 entities</div>
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Annual contracted fees</div>
-            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display tabular text-[36px] text-ink mt-1.5 leading-none">
               {fmtUSD(totalFee, { compact: true })}
             </div>
             <div className="text-[11.5px] text-emerald-deep tabular mt-2">+12.7% vs. 2025</div>
           </div>
           <div className="bg-paper-card p-5">
             <div className="eyebrow">Renewal window</div>
-            <div className="display text-[20px] text-ink mt-1.5 leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <div className="display text-[20px] text-ink mt-1.5 leading-tight">
               Jan – Feb 2027
             </div>
             <div className="text-[11.5px] text-ink-muted tabular mt-2">All 3 letters expire same window</div>
@@ -146,7 +146,7 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
                   </div>
                   <div className="text-right shrink-0">
                     <div className="eyebrow">Annual fee</div>
-                    <div className="display tabular text-[24px] text-ink mt-0.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                    <div className="display tabular text-[24px] text-ink mt-0.5 leading-none">
                       {fmtUSD(e.fee, { compact: true })}
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
         <Card padded={false} className="overflow-hidden">
           <div className="px-7 pt-6 pb-4 border-b border-ink/8">
             <div className="eyebrow">Active work items</div>
-            <h3 className="display text-[20px] text-ink mt-1" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+            <h3 className="display text-[20px] text-ink mt-1">
               What's in flight for Tucker
             </h3>
           </div>

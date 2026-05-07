@@ -52,9 +52,9 @@ export function MorningBriefing() {
 
         <div className="grid grid-cols-12 gap-8 items-end">
           <div className="col-span-8">
-            <div className="display text-[68px] leading-[0.92] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
+            <div className="display text-[68px] leading-[0.92] text-ink text-balance">
               <span className="block">Thursday's</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
+              <span className="italic">
                 Briefing.
               </span>
             </div>
@@ -66,7 +66,7 @@ export function MorningBriefing() {
           <div className="col-span-4 grid grid-cols-2 gap-4 pb-2">
             <div className="border-l-2 border-ochre-500 pl-4">
               <div className="eyebrow">Needs attention</div>
-              <div className="display tabular text-[40px] leading-none mt-1.5 text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[40px] leading-none mt-1.5 text-ink">
                 {items.length}
               </div>
               <div className="text-[11px] text-ink-muted tabular mt-1">
@@ -75,7 +75,7 @@ export function MorningBriefing() {
             </div>
             <div className="border-l-2 border-ink/15 pl-4">
               <div className="eyebrow">In play</div>
-              <div className="display tabular text-[40px] leading-none mt-1.5 text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+              <div className="display tabular text-[40px] leading-none mt-1.5 text-ink">
                 {fmtUSD(totalValue, { compact: true }).replace("$", "$")}
               </div>
               <div className="text-[11px] text-ink-muted mt-1">aggregate value at stake</div>
@@ -103,7 +103,7 @@ export function MorningBriefing() {
                   {/* Left rail: index, category, owner */}
                   <div className="col-span-2 pt-1">
                     <div className="flex items-baseline gap-2">
-                      <span className="display tabular text-[40px] text-ink leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 360 }}>
+                      <span className="display tabular text-[40px] text-ink leading-none">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
@@ -125,7 +125,7 @@ export function MorningBriefing() {
                     <div className="text-[11px] text-ink-faint mb-1.5 tabular">
                       Detected {fmtTime(item.detectedAt)} · via {item.source}
                     </div>
-                    <h3 className="display text-[27px] leading-[1.05] text-ink text-balance" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 40', fontWeight: 380 }}>
+                    <h3 className="display text-[27px] leading-[1.05] text-ink text-balance">
                       {item.headline}
                     </h3>
                     <p className="text-[14px] text-ink-soft mt-3 leading-relaxed">{item.detail}</p>
@@ -142,7 +142,7 @@ export function MorningBriefing() {
                     {item.estimatedValue !== undefined && item.estimatedValue !== 0 && (
                       <div className="text-right">
                         <div className="eyebrow text-[10px]">{isPositive ? "Estimated value" : "Estimated exposure"}</div>
-                        <div className={`display tabular text-[36px] leading-none mt-1 ${isPositive ? "text-emerald-deep" : "text-crimson-deep"}`} style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                        <div className={`display tabular text-[36px] leading-none mt-1 ${isPositive ? "text-emerald-deep" : "text-crimson-deep"}`}>
                           {fmtUSD(Math.abs(item.estimatedValue), { compact: true })}
                         </div>
                         <div className="text-[11px] text-ink-muted mt-2 tabular">Owner · {item.owner}</div>
@@ -184,7 +184,7 @@ export function MorningBriefing() {
         <div className="mt-12 pt-10 border-t border-ink/8 grid grid-cols-12 gap-8">
           <div className="col-span-4">
             <div className="eyebrow mb-3">How the brain reasoned this morning</div>
-            <h4 className="display text-[22px] leading-tight text-ink mb-4" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60', fontWeight: 380 }}>
+            <h4 className="display text-[22px] leading-tight text-ink mb-4">
               What's running underneath
             </h4>
             <p className="text-[13px] text-ink-muted leading-relaxed">
@@ -202,7 +202,7 @@ export function MorningBriefing() {
             ].map((k) => (
               <div key={k.label} className="bg-paper-card p-6">
                 <div className="eyebrow text-[10px]">{k.label}</div>
-                <div className="display tabular text-[34px] text-ink mt-1.5 leading-none" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+                <div className="display tabular text-[34px] text-ink mt-1.5 leading-none">
                   {k.value}
                 </div>
                 <div className="text-[11px] text-ink-muted mt-1.5 tabular">{k.sub}</div>

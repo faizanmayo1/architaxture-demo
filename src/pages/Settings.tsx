@@ -176,7 +176,7 @@ export function Settings() {
               return (
                 <div key={pod} className="bg-paper-card p-5">
                   <div className="flex items-baseline justify-between mb-3">
-                    <div className="display text-[20px] text-ink" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 40', fontWeight: 380 }}>
+                    <div className="display text-[20px] text-ink">
                       POD {pod}
                     </div>
                     <span className="text-[11px] text-ink-muted tabular">{podStaff.length} members</span>
