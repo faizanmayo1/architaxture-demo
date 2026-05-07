@@ -47,14 +47,7 @@ export function Forecasting({ clientId, tab }: { clientId: number; tab?: string 
             { label: "Forecasting" },
           ]}
           eyebrow="Household Tax Estimate · 2025"
-          title={
-            <>
-              <span className="block">Forecast,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                quarterly.
-              </span>
-            </>
-          }
+          title="Forecast, quarterly."
           subtitle="Side-by-side prior year vs. projected 2025. Locked snapshots preserve assumptions and line items as JSONB. Accepted strategies auto-adjust the model."
           action={
             <div className="flex items-center gap-2.5">
@@ -72,7 +65,7 @@ export function Forecasting({ clientId, tab }: { clientId: number; tab?: string 
       </div>
 
       {/* Forecast sub-tabs (per brief 2.5) */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
+      <div className="px-10 border-b border-ink/8 bg-paper">
         <div className="flex items-end gap-1 max-w-[1280px] overflow-x-auto">
           {([
             { id: "overview", label: "Overview" },

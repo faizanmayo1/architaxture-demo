@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter";
 import { Layout } from "./components/layout/Layout";
+import { ClientShell } from "./components/layout/ClientShell";
 import { ClientHub } from "./pages/ClientHub";
 import { MorningBriefing } from "./pages/MorningBriefing";
 import { Forecasting } from "./pages/Forecasting";
@@ -41,34 +42,34 @@ export default function App() {
             <Route path="/briefing" component={MorningBriefing} />
             <Route path="/clients" component={ClientsList} />
             <Route path="/clients/:id">
-              {(params) => <ClientHub clientId={Number(params.id)} />}
+              {(params) => <ClientShell><ClientHub clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/tax-dashboard">
-              {(params) => <TaxDashboard clientId={Number(params.id)} />}
+              {(params) => <ClientShell><TaxDashboard clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/tax-plan-pdf">
               {(params) => <TaxPlanPDF clientId={Number(params.id)} />}
             </Route>
             <Route path="/clients/:id/forecast/:rest*">
-              {(params) => <Forecasting clientId={Number(params.id)} tab={(params as any).rest} />}
+              {(params) => <ClientShell><Forecasting clientId={Number(params.id)} tab={(params as any).rest} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/forecast">
-              {(params) => <Forecasting clientId={Number(params.id)} />}
+              {(params) => <ClientShell><Forecasting clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/tax-planning">
-              {(params) => <TaxPlanning clientId={Number(params.id)} />}
+              {(params) => <ClientShell><TaxPlanning clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/strategies/augusta-rule">
-              {(params) => <AugustaPlaybook clientId={Number(params.id)} />}
+              {(params) => <ClientShell><AugustaPlaybook clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/documents">
-              {(params) => <ClientDocuments clientId={Number(params.id)} />}
+              {(params) => <ClientShell><ClientDocuments clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/engagements">
-              {(params) => <ClientEngagements clientId={Number(params.id)} />}
+              {(params) => <ClientShell><ClientEngagements clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/clients/:id/communications">
-              {(params) => <ClientCommunications clientId={Number(params.id)} />}
+              {(params) => <ClientShell><ClientCommunications clientId={Number(params.id)} /></ClientShell>}
             </Route>
             <Route path="/irs-notices" component={IRSNotices} />
             <Route path="/irs-notices/:id">

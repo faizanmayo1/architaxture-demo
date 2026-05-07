@@ -47,11 +47,7 @@ export function Settings() {
       <div className="px-10 pt-10 max-w-[1280px]">
         <PageHeader
           eyebrow="Settings · Integrations · AI controls"
-          title={
-            <>
-              <span className="block">The plumbing.</span>
-            </>
-          }
+          title="The plumbing."
           subtitle="External systems wired to ArchiTAXture, the AI evolution stage, and firm preferences. The brief's Section 1.4 is the source of truth."
         />
       </div>

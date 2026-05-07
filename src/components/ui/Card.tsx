@@ -15,7 +15,7 @@ export function Card({
     <div
       className={cn(
         "card",
-        padded && "p-6",
+        padded && "p-7",
         raised && "shadow-paper-md",
         className
       )}
@@ -39,14 +39,14 @@ export function CardHeader({
   className?: string;
 }) {
   return (
-    <div className={cn("flex items-start justify-between gap-4 mb-5", className)}>
+    <div className={cn("flex items-start justify-between gap-4 mb-6", className)}>
       <div className="min-w-0">
-        {eyebrow && <div className="eyebrow mb-2">{eyebrow}</div>}
-        <h3 className="display text-[20px] text-ink leading-tight" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+        {eyebrow && <div className="eyebrow mb-2.5">{eyebrow}</div>}
+        <h3 className="display text-[20px] text-ink leading-tight tracking-crisp">
           {title}
         </h3>
         {description && (
-          <p className="text-[13px] text-ink-muted mt-1.5 max-w-prose">{description}</p>
+          <p className="text-[13px] text-ink-muted mt-2 max-w-prose leading-relaxed">{description}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}

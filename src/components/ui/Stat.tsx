@@ -18,24 +18,24 @@ export function Stat({
   className?: string;
 }) {
   const valueSize = {
-    sm: "text-[20px]",
-    md: "text-[26px]",
-    lg: "text-[36px]",
-    xl: "text-[52px]",
+    sm: "text-[22px]",
+    md: "text-[30px]",
+    lg: "text-[40px]",
+    xl: "text-[56px]",
   }[size];
 
-  const labelSize = size === "xl" || size === "lg" ? "text-[11px]" : "text-[10px]";
+  const labelSize = size === "xl" || size === "lg" ? "text-[11px]" : "text-[10.5px]";
 
   return (
     <div className={cn("flex flex-col", align === "right" && "items-end", align === "center" && "items-center", className)}>
       <div className={cn("eyebrow", labelSize)}>{label}</div>
-      <div className={cn("display tabular text-ink mt-1", valueSize)} style={{ fontVariationSettings: '"opsz" 144, "SOFT" 30', fontWeight: 380 }}>
+      <div className={cn("display tabular text-ink mt-2 tracking-crisp leading-none", valueSize)}>
         {value}
       </div>
-      {sub && <div className="text-[12px] text-ink-muted mt-0.5 tabular">{sub}</div>}
+      {sub && <div className="text-[12px] text-ink-muted mt-2 tabular">{sub}</div>}
       {trend && (
         <div className={cn(
-          "text-[11px] mt-1 tabular flex items-center gap-1",
+          "text-[11.5px] mt-2 tabular flex items-center gap-1 font-medium",
           trend.positive ? "text-emerald-deep" : "text-crimson-deep"
         )}>
           <span>{trend.direction === "up" ? "↑" : trend.direction === "down" ? "↓" : "→"}</span>

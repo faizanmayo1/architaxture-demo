@@ -83,14 +83,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
             { label: "Augusta Rule" },
           ]}
           eyebrow={`Strategy Playbook · §280A(g) · Phase 5 Proposed`}
-          title={
-            <>
-              <span className="block">The Augusta</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                Rule.
-              </span>
-            </>
-          }
+          title="The Augusta Rule."
           subtitle="Rent personal residence to S-Corp for ≤14 days/year. Tax-free to homeowner; deductible to entity. AI-drafted rental agreement, 14 board minutes, and IRS guidance memo. Completion gates enforce process."
           action={
             <div className="flex items-center gap-2.5">
@@ -253,7 +246,7 @@ export function AugustaPlaybook({ clientId }: { clientId: number }) {
 
           {/* RIGHT — Selected document preview pane */}
           <div className="col-span-5">
-            <div className="sticky top-[80px]">
+            <div className="sticky top-[210px]">
               <Card padded={false} className="overflow-hidden">
                 {/* Pane header */}
                 <div className="px-5 py-4 border-b border-ink/8 flex items-center justify-between">

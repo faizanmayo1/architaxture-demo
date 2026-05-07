@@ -35,14 +35,7 @@ export function IRSNoticeDetail({ noticeId }: { noticeId: string }) {
             { label: `${notice.type} · ${notice.client}` },
           ]}
           eyebrow={`Notice ${notice.irsTrackingNumber} · TY ${notice.taxYear}`}
-          title={
-            <>
-              <span className="block">{notice.type}.</span>
-              <span className="italic block" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                {notice.client}.
-              </span>
-            </>
-          }
+          title={`${notice.type} · ${notice.client}`}
           subtitle={notice.summary}
           action={
             <div className="flex items-center gap-2.5">

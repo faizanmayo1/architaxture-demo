@@ -46,15 +46,6 @@ export function TaxDashboard({ clientId }: { clientId: number }) {
   const [location] = useLocation();
   const client = TUCKER;
 
-  const tabs = [
-    { label: "Overview", path: `/clients/${client.id}` },
-    { label: "Tax Dashboard", path: `/clients/${client.id}/tax-dashboard`, active: true },
-    { label: "Forecasts", path: `/clients/${client.id}/forecast` },
-    { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
-    { label: "Documents", path: `/clients/${client.id}/documents` },
-    { label: "Engagements", path: `/clients/${client.id}/engagements` },
-    { label: "Communications", path: `/clients/${client.id}/communications` },
-  ];
 
   return (
     <div className="animate-fade-up">
@@ -67,14 +58,7 @@ export function TaxDashboard({ clientId }: { clientId: number }) {
             { label: "Tax Dashboard" },
           ]}
           eyebrow={`Tax Dashboard · TY ${TAX_DATA.taxYear} · ${TAX_DATA.filingStatus} · 15 sections`}
-          title={
-            <>
-              <span className="block">The full</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                tax picture.
-              </span>
-            </>
-          }
+          title="The full tax picture."
           subtitle="Built from extracted 2024 return data. Marginal brackets, Schedule D, K-1 pass-through, MAGI thresholds, payments vs liability — everything a Tax Manager looks at, in one place."
           action={
             <div className="flex items-center gap-2.5">
@@ -89,25 +73,6 @@ export function TaxDashboard({ clientId }: { clientId: number }) {
             </div>
           }
         />
-      </div>
-
-      {/* Tabs */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
-        <div className="flex items-end gap-1 max-w-[1280px] overflow-x-auto">
-          {tabs.map((tab) => (
-            <Link
-              key={tab.path}
-              to={tab.path}
-              className={cn(
-                "px-4 py-3 text-[13px] tracking-tight transition-colors relative whitespace-nowrap",
-                tab.active ? "text-ink" : "text-ink-muted hover:text-ink"
-              )}
-            >
-              {tab.label}
-              {tab.active && <span className="absolute left-0 right-0 bottom-0 h-px bg-ochre-500" />}
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div className="px-10 py-10 max-w-[1280px]">
