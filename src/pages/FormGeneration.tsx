@@ -121,14 +121,7 @@ export function FormGeneration() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="Automated IRS Form Generation · Phase 4 · Proposed"
-          title={
-            <>
-              <span className="block">Forms,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                pre-filled.
-              </span>
-            </>
-          }
+          title="Forms, pre-filled."
           subtitle="Standard IRS forms auto-populated from client and entity data. Field-level mapping to ArchiTAXture data model. Staff review before delivery — no field is ever blank or guessed."
           action={
             <button className="flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">

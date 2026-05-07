@@ -84,14 +84,7 @@ export function StrategyEngine() {
       <div className="px-10 pt-10 max-w-[1380px]">
         <PageHeader
           eyebrow="Strategy Execution Engine · Phase 5 · Proposed"
-          title={
-            <>
-              <span className="block">Playbooks,</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                in flight.
-              </span>
-            </>
-          }
+          title="Playbooks, in flight."
           subtitle="Every active strategy across the firm. Completion gates enforce the process. AI-drafted deliverables, owner accountability, overdue triggers — same engine, different client."
           action={
             <div className="flex items-center gap-2">

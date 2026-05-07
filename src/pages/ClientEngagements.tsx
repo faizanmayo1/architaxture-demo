@@ -47,14 +47,6 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
   const tuckerWork = WORK_ITEMS.filter((w) => w.clientId === 60);
   const totalFee = TUCKER_ENGAGEMENTS.reduce((s, e) => s + e.fee, 0);
 
-  const tabs = [
-    { label: "Overview", path: `/clients/${client.id}` },
-    { label: "Forecasts", path: `/clients/${client.id}/forecast` },
-    { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
-    { label: "Documents", path: `/clients/${client.id}/documents` },
-    { label: "Engagements", path: `/clients/${client.id}/engagements`, active: true },
-    { label: "Communications", path: `/clients/${client.id}/communications` },
-  ];
 
   return (
     <div className="animate-fade-up">
@@ -66,28 +58,9 @@ export function ClientEngagements({ clientId }: { clientId: number }) {
             { label: "Engagements" },
           ]}
           eyebrow={`${TUCKER_ENGAGEMENTS.length} active engagements · ${tuckerWork.length} work items in flight`}
-          title={
-            <>
-              <span className="block">The book</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                of work.
-              </span>
-            </>
-          }
+          title="The book of work."
           subtitle="Engagement letters, work items, fees by entity, renewal status."
         />
-      </div>
-
-      {/* Tabs */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
-        <div className="flex items-end gap-1 max-w-[1280px]">
-          {tabs.map((tab) => (
-            <Link key={tab.path} to={tab.path} className={cn("px-4 py-3 text-[13px] tracking-tight transition-colors relative", tab.active ? "text-ink" : "text-ink-muted hover:text-ink")}>
-              {tab.label}
-              {tab.active && <span className="absolute left-0 right-0 bottom-0 h-px bg-ochre-500" />}
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div className="px-10 py-10 max-w-[1280px]">

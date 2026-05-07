@@ -41,14 +41,6 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
   const total = REQUEST_CHECKLIST.length;
   const completion = (received / total) * 100;
 
-  const tabs = [
-    { label: "Overview", path: `/clients/${client.id}` },
-    { label: "Forecasts", path: `/clients/${client.id}/forecast` },
-    { label: "Tax Planning", path: `/clients/${client.id}/tax-planning` },
-    { label: "Documents", path: `/clients/${client.id}/documents`, active: true },
-    { label: "Engagements", path: `/clients/${client.id}/engagements` },
-    { label: "Communications", path: `/clients/${client.id}/communications` },
-  ];
 
   return (
     <div className="animate-fade-up">
@@ -60,14 +52,7 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
             { label: "Documents" },
           ]}
           eyebrow={`Document Request · TY 2024 · ${received}/${total} received`}
-          title={
-            <>
-              <span className="block">Tucker's</span>
-              <span className="italic" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100', fontWeight: 320 }}>
-                paper trail.
-              </span>
-            </>
-          }
+          title="Tucker's paper trail."
           subtitle="Document request checklist with portal upload, AI auto-classification, and source-document storage. Per-client view of the firm-wide document intelligence."
           action={
             <button className="flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-medium bg-ink text-paper hover:bg-ink-soft transition-colors rounded-sm">
@@ -76,25 +61,6 @@ export function ClientDocuments({ clientId }: { clientId: number }) {
             </button>
           }
         />
-      </div>
-
-      {/* Tabs */}
-      <div className="px-10 border-b border-ink/8 sticky top-0 z-20 bg-paper">
-        <div className="flex items-end gap-1 max-w-[1280px]">
-          {tabs.map((tab) => (
-            <Link
-              key={tab.path}
-              to={tab.path}
-              className={cn(
-                "px-4 py-3 text-[13px] tracking-tight transition-colors relative",
-                tab.active ? "text-ink" : "text-ink-muted hover:text-ink"
-              )}
-            >
-              {tab.label}
-              {tab.active && <span className="absolute left-0 right-0 bottom-0 h-px bg-ochre-500" />}
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div className="px-10 py-10 max-w-[1280px]">
